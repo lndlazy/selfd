@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">自助机</string>
+    <string name="otherLoginType">其他登录方式</string>
+    <string name="etPwdLogInit">请输入8位以内大小写字母、数字和字符组成的密码</string>
+    <string name="etUserLoginInit">请输入用户名</string>
+    <string name="login_username">用户名</string>
+    <string name="login_pwd">密码</string>
+    <string name="login_phone">手机号</string>
+    <string name="etPhoneLoginInit">请输入手机号</string>
+    <string name="login_code">验证码</string>
+    <string name="etCodeLogInit">请输入验证码</string>
+    <string name="toast_input_phone">请输入手机号</string>
+    <string name="etPwdPlease">请输入密码</string>
+    <string name="welUseLeniu">欢迎使用 乐牛自助终端</string>
+</resources>

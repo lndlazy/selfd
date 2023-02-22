@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="10dp"
+        android:text="14:32"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="02-22"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@id/tvTime"
+        app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+    <TextView
+        android:id="@+id/tvWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期二"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTime"
+        app:layout_constraintLeft_toLeftOf="@id/tvDate" />
+
+    <ImageView
+        android:id="@+id/ivSetting"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="26dp"
+        android:padding="5dp"
+        android:src="@mipmap/ic_setting"
+        app:layout_constraintBottom_toBottomOf="@id/tvTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="张散散"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTime"
+        app:layout_constraintRight_toLeftOf="@id/ivSetting"
+        app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+    <ImageView
+        android:id="@+id/ivHeadPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:src="@mipmap/ic_pic_default"
+        app:layout_constraintBottom_toBottomOf="@id/ivSetting"
+        app:layout_constraintRight_toLeftOf="@id/tvUserName"
+        app:layout_constraintTop_toTopOf="@id/ivSetting" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+ext {
+    android = [
+
+            buildTools: '28.0.3',
+            supportVersion   : '26.0.2',
+            minSdkVersion    : 19,
+            compileSdk: 23,
+            targetSdk : 23,
+            applicationId    : "net.xnzn.app.selfdevice",
+            versionCode      : 1,
+            versionName      : "1.0"
+
+    ]
+
+}

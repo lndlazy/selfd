@@ -1,0 +1,43 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://plugins.gradle.org/m2/" }
+
+        //云效release仓库
+        maven {
+            credentials {
+                username YX_USERNAME
+                password YX_PASSWORD
+            }
+            //release
+            url YX_RELEASE_REPOSITORY_URL
+        }
+
+        //云效snapshot仓库
+        maven {
+            credentials {
+                username YX_USERNAME
+                password YX_PASSWORD
+            }
+            //snapshot
+            url YX_SNAPSHOT_REPOSITORY_URL
+        }
+
+    }
+}
+rootProject.name = "SelfDevice"
+include ':app_self'
+
+//apply from: 'config.gradle'
