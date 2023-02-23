@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="140dp"
+    android:background="@color/page_bg_gray">
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@mipmap/ic_charge_title_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="总余额(元)"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintTop_toTopOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvTotalLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥520"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv1"
+        app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+    <TextView
+        android:id="@+id/tvMoney1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="￥280.0"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_2"
+        app:layout_constraintBottom_toBottomOf="@id/v1"
+        app:layout_constraintLeft_toLeftOf="@id/tv1" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:text="个人钱包"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_1"
+        app:layout_constraintBottom_toTopOf="@id/tvMoney1"
+        app:layout_constraintLeft_toLeftOf="@id/tvMoney1"
+        app:layout_constraintRight_toRightOf="@id/tvMoney1" />
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="1dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="@dimen/charge_margin_1"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney1"
+        app:layout_constraintLeft_toRightOf="@id/tvMoney1"
+        app:layout_constraintTop_toTopOf="@id/t1" />
+
+    <TextView
+        android:id="@+id/tvMoney2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/charge_margin_1"
+        android:text="￥280.0"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_2"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney1"
+        app:layout_constraintLeft_toRightOf="@id/v2" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:text="补贴钱包"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_1"
+        app:layout_constraintBottom_toTopOf="@id/tvMoney2"
+        app:layout_constraintLeft_toLeftOf="@id/tvMoney2"
+        app:layout_constraintRight_toRightOf="@id/tvMoney2" />
+
+
+    <View
+        android:id="@+id/v3"
+        android:layout_width="1dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="@dimen/charge_margin_1"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney1"
+        app:layout_constraintLeft_toRightOf="@id/tvMoney2"
+        app:layout_constraintTop_toTopOf="@id/t1" />
+
+    <TextView
+        android:id="@+id/tvMoney3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/charge_margin_1"
+        android:text="￥200.0"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_2"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney1"
+        app:layout_constraintLeft_toRightOf="@id/v3" />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:text="红包钱包"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_1"
+        app:layout_constraintBottom_toTopOf="@id/tvMoney3"
+        app:layout_constraintLeft_toLeftOf="@id/tvMoney3"
+        app:layout_constraintRight_toRightOf="@id/tvMoney3" />
+
+
+    <View
+        android:id="@+id/v4"
+        android:layout_width="1dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="@dimen/charge_margin_1"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney1"
+        app:layout_constraintLeft_toRightOf="@id/tvMoney3"
+        app:layout_constraintTop_toTopOf="@id/t1" />
+
+    <TextView
+        android:id="@+id/tvMoney4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/charge_margin_1"
+        android:text="￥20.0"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_2"
+        app:layout_constraintBottom_toBottomOf="@id/tvMoney1"
+        app:layout_constraintLeft_toRightOf="@id/v4" />
+
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:text="冻结金额"
+        android:textColor="@color/white"
+        android:textSize="@dimen/charge_size_1"
+        app:layout_constraintBottom_toTopOf="@id/tvMoney4"
+        app:layout_constraintLeft_toLeftOf="@id/tvMoney4"
+        app:layout_constraintRight_toRightOf="@id/tvMoney4" />
+
+    <View
+        android:id="@+id/v5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_white_bg_cir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="充值金额"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@id/v5"
+        app:layout_constraintTop_toTopOf="@id/v5" />
+
+    <TextView
+        android:id="@+id/tvShowCharge"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/shape_charge_money_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:text="30元"
+        android:textColor="@color/theme_color"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/tvC" />
+
+    <me.jingbin.library.ByRecyclerView
+        android:id="@+id/moneyRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/tvShowCharge" />
+
+    <TextView
+        android:id="@+id/tvCharge"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/shape_theme_color_login"
+        android:gravity="center"
+        android:text="立即充值"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/tvShowCharge"
+        app:layout_constraintRight_toRightOf="@id/tvShowCharge"
+        app:layout_constraintTop_toBottomOf="@id/moneyRecyclerView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

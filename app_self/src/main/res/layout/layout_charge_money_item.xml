@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvMoneyDetail"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_margin="20dp"
+    android:gravity="center"
+    android:text="30元"
+    android:textColor="@color/text_color_1a"
+    android:textSize="25sp">
+
+
+</TextView>

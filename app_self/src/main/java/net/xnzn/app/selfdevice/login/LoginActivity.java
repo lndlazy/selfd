@@ -82,6 +82,7 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
         line1 = findViewById(R.id.line1);
         line2 = findViewById(R.id.line2);
+        in_title.setBackground(null);
     }
 
     @Override

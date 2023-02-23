@@ -12,4 +12,6 @@
     <string name="toast_input_phone">请输入手机号</string>
     <string name="etPwdPlease">请输入密码</string>
     <string name="welUseLeniu">欢迎使用 乐牛自助终端</string>
+    <string name="menu_show_title_info"><![CDATA[首页>菜谱公示]]></string>
+    <string name="show_qrcode_to_pay">请出示付款码，对准设备下方扫码口进行支付</string>
 </resources>

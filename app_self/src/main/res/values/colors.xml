@@ -12,8 +12,20 @@
     <color name="translucent">#00000000</color>
 
     <color name="theme_color">#8943E9</color>
-    <color name="gray">#CCCCCC </color>
-    <color name="black_light">#0A1616 </color>
-
+    <color name="gray">#CCCCCC</color>
+    <color name="black_light">#0A1616</color>
+    <color name="gray_two">#F2F2F2</color>
+    <color name="text_color_666">#666666</color>
+    <color name="page_bg_gray">#F7F7F7</color>
+    <color name="text_color_80">#808080</color>
+    <color name="text_color_b3">#B3B3B3</color>
+    <color name="text_color_red_ff">#FF1800</color>
+    <color name="text_color_f5">#F5F5F5</color>
+    <color name="text_color_4d">#4D4D4D</color>
+    <color name="text_color_98">#989DA4</color>
+    <color name="bg_color_c1">#C1C1C1</color>
+    <color name="text_color_1a">#1A1A1A</color>
+    <color name="text_color_33">#333333</color>
+    <color name="text_color_oa">#0A1616</color>
 
 </resources>

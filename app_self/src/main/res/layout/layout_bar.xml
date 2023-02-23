@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/theme_color"
-    android:layout_height="50dp">
+    android:layout_height="60dp"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/ivPic"
@@ -19,9 +19,9 @@
         android:id="@+id/tvBarContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:layout_marginLeft="5dp"
-        android:text="首页>一周菜谱"
+        android:text="@string/menu_show_title_info"
+        android:textColor="@color/text_color_666"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/ivPic"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +32,7 @@
         android:layout_height="20dp"
         android:layout_marginRight="15dp"
         android:src="@mipmap/ic_exit"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +44,7 @@
         android:layout_marginRight="5dp"
         android:text="张三"
         android:textColor="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@id/ivBarExit"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +55,7 @@
         android:layout_height="20dp"
         android:layout_marginRight="5dp"
         android:src="@mipmap/ic_head_pic"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvBarName"
         app:layout_constraintTop_toTopOf="parent" />

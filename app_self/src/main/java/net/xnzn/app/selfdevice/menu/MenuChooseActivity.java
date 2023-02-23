@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import net.xnzn.app.selfdevice.R;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jingbin.library.ByRecyclerView;
+import me.jingbin.library.decoration.SpacesItemDecoration;
 
 public class MenuChooseActivity extends SelfCommonActivity {
 
@@ -38,11 +40,17 @@ public class MenuChooseActivity extends SelfCommonActivity {
     }
 
     @Override
+    protected boolean showTitleBar() {
+        return false;
+    }
+
+    @Override
     protected void initView() {
         super.initView();
         byRecyclerView = findViewById(R.id.byRecyclerView);
         ivBack = findViewById(R.id.ivBack);
         tvCount = findViewById(R.id.tvCount);
+        in_title.setBackgroundResource(R.drawable.shape_theme_title);
     }
 
     @Override
@@ -55,8 +63,18 @@ public class MenuChooseActivity extends SelfCommonActivity {
         chooseBeanList.add(new MenuChooseBean(1, "自助餐菜谱", ""));
         chooseBeanList.add(new MenuChooseBean(2, "自助餐菜谱", ""));
         chooseBeanList.add(new MenuChooseBean(3, "自助餐菜谱", ""));
-        byRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        chooseBeanList.add(new MenuChooseBean(4, "自助餐菜谱", ""));
+        byRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         MenuChooseAdapter chooseAdapter = new MenuChooseAdapter(chooseBeanList);
+
+//        SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this)
+////                .setNoShowDivider(1, 1)
+//                // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
+//                .setParam(R.color.translucent, 30, 0, 0);
+//
+////        recyclerView.addItemDecoration(itemDecoration);
+//        byRecyclerView.addItemDecoration(itemDecoration2);
+
         byRecyclerView.setAdapter(chooseAdapter);
         chooseAdapter.setNewData(chooseBeanList);
         byRecyclerView.setOnItemClickListener(new ByRecyclerView.OnItemClickListener() {
@@ -77,10 +95,11 @@ public class MenuChooseActivity extends SelfCommonActivity {
     @Override
     protected void countDownFinish() {
 
+        finish();
     }
 
     @Override
     protected void showCountDownTime(int time) {
-
+        tvCount.setText(time < 0 ? "" : (time + "s"));
     }
 }

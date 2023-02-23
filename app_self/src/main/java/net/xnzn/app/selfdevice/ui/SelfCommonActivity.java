@@ -13,7 +13,9 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
 
     protected ImageView ivBack, ivBarExit, ivBarHeadPic;
     protected TextView tvCount, tvBarContent, tvBarName, tvBack;
-
+    protected View in_title;
+    protected View in_bar;
+    protected View in_time_title;
 
     //是否显示返回按钮
     protected abstract boolean showTitle();
@@ -32,9 +34,9 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
     @Override
     protected void initView() {
 
-        View in_title = findViewById(R.id.in_title);
-        View in_bar = findViewById(R.id.in_bar);
-        View in_time_title = findViewById(R.id.in_time_title);
+        in_title = findViewById(R.id.in_title);
+        in_bar = findViewById(R.id.in_bar);
+        in_time_title = findViewById(R.id.in_time_title);
 
         ivBack = findViewById(R.id.ivBack);
         tvCount = findViewById(R.id.tvCount);

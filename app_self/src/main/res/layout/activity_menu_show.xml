@@ -2,47 +2,75 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@mipmap/ic_home_bg"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="90dp"
+    android:background="@color/page_bg_gray">
 
-<!--    <include-->
-<!--        android:id="@+id/in_title"-->
-<!--        layout="@layout/layout_title"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content" />-->
+    <!--    <include-->
+    <!--        android:id="@+id/in_title"-->
+    <!--        layout="@layout/layout_title"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content" />-->
 
-<!--    <include-->
-<!--        android:id="@+id/in_bar"-->
-<!--        layout="@layout/layout_bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/in_title" />-->
-
+    <!--    <include-->
+    <!--        android:id="@+id/in_bar"-->
+    <!--        layout="@layout/layout_bar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/in_title" />-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brDateRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:background="@color/white"
         android:orientation="horizontal"
+        android:overScrollMode="never"
         app:layout_constraintLeft_toLeftOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brDateRecyclerView"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/theme_color"
+        app:tabIndicatorFullWidth="false"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/theme_color" />
 
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brTypeRecyclerView"
-        android:layout_width="80dp"
+        android:layout_width="145dp"
         android:layout_height="0dp"
+        android:background="@color/white"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/brDateRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@id/tab" />
 
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brMenuRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="22dp"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/brTypeRecyclerView"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/brDateRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@id/tab" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

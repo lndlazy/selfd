@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.UserInfo;
+import net.xnzn.app.selfdevice.charge.ChargeActivity;
 import net.xnzn.app.selfdevice.login.LoginActivity;
 import net.xnzn.app.selfdevice.menu.MenuChooseActivity;
 import net.xnzn.app.selfdevice.setting.SettingActivity;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jingbin.library.ByRecyclerView;
+import me.jingbin.library.decoration.SpacesItemDecoration;
 
 public class HomeActivity extends SelfCommonActivity implements View.OnClickListener {
 
@@ -92,13 +94,18 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         HomeAdapter homeAdapter = new HomeAdapter(this, homeItems);
 
         homeAdapter.setNewData(homeItems);
-        // 选择2：设置颜色、高度、间距等
+////         选择2：设置颜色、高度、间距等
 //        SpacesItemDecoration itemDecoration = new SpacesItemDecoration(this, SpacesItemDecoration.VERTICAL)
-//                .setNoShowDivider(1, 1)
+////                .setNoShowDivider(1, 1)
 //                // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
-//                .setParam(R.color.transtant, 10, 10, 0);
-//
+//                .setParam(R.color.translucent, 30, 0, 0);
+         SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this, SpacesItemDecoration.HORIZONTAL)
+//                .setNoShowDivider(1, 1)
+                // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
+                .setParam(R.color.translucent, 20, 0, 0);
+
 //        recyclerView.addItemDecoration(itemDecoration);
+        recyclerView.addItemDecoration(itemDecoration2);
         recyclerView.setAdapter(homeAdapter);
         recyclerView.setOnItemClickListener(new ByRecyclerView.OnItemClickListener() {
             @Override
@@ -107,6 +114,9 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
                 switch (position) {
                     case 0:
                         startActivity(MenuChooseActivity.class);
+                        break;
+                        case 1:
+                        startActivity(ChargeActivity.class);
                         break;
                     case 2:
                         startActivity(LoginActivity.class);
