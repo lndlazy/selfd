@@ -25,11 +25,9 @@ import me.jingbin.library.decoration.SpacesItemDecoration;
 
 public class MenuShowActivity extends SelfCommonActivity {
 
-    private ByRecyclerView brDateRecyclerView, brTypeRecyclerView
-            , brMenuRecyclerView
-            ;
+    private ByRecyclerView brDateRecyclerView, brTypeRecyclerView, brMenuRecyclerView;
 
-//    private RecyclerView brMenuRecyclerView;
+    //    private RecyclerView brMenuRecyclerView;
     protected TabLayout tabLayout;
 
     @Override
@@ -55,11 +53,6 @@ public class MenuShowActivity extends SelfCommonActivity {
     }
 
     @Override
-    protected boolean showTimeTitle() {
-        return false;
-    }
-
-    @Override
     protected int showView() {
         return R.layout.activity_menu_show;
     }
@@ -77,17 +70,18 @@ public class MenuShowActivity extends SelfCommonActivity {
         tabLayout.addTab(tabLayout.newTab().setText("晚餐"));
         tabLayout.addTab(tabLayout.newTab().setText("夜宵"));
 
+        countDown(10, 20);
     }
 
     private void setMenuShowAdapter() {
 
         List<MenuFoodsDetailBean> foodList = new ArrayList<>();
         foodList.add(new MenuFoodsDetailBean(1, "推荐", "", -1, new String[]{"微甜", "香脆"}, "80", "98%", "12"));
-        foodList.add(new MenuFoodsDetailBean(1, "红烧狮子头", "", 1, new String[]{"微甜", "香脆"}, "80", "98%", "12"));
-        foodList.add(new MenuFoodsDetailBean(1, "盐水鸭", "", 1, new String[]{"微甜", "香脆"}, "80", "98%", "12"));
-        foodList.add(new MenuFoodsDetailBean(1, "辣子鸡", "", 1, new String[]{"微甜", "香脆"}, "80", "98%", "12"));
+        foodList.add(new MenuFoodsDetailBean(1, "红烧狮子头", "", 1, new String[]{"微甜"}, "80", "98%", "12"));
+        foodList.add(new MenuFoodsDetailBean(1, "盐水鸭", "", 1, new String[]{"微甜", "香脆", "浓厚"}, "80", "98%", "12"));
+        foodList.add(new MenuFoodsDetailBean(1, "辣子鸡", "", 1, new String[]{"可口", "香脆", "香辣"}, "80", "98%", "12"));
         foodList.add(new MenuFoodsDetailBean(1, "热门推荐", "", -1, new String[]{"微甜", "香脆"}, "80", "98%", "12"));
-        foodList.add(new MenuFoodsDetailBean(1, "青椒肉丝", "", 2, new String[]{"微甜", "香脆"}, "80", "98%", "12"));
+        foodList.add(new MenuFoodsDetailBean(1, "青椒肉丝", "", 2, new String[]{"微甜"}, "80", "98%", "12"));
         MenuFoodsAdapter menuFoodsAdapter = new MenuFoodsAdapter(this, foodList);
 //        MenuShowAdapter menuFoodsAdapter = new MenuShowAdapter(this, foodList);
         brMenuRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -165,16 +159,6 @@ public class MenuShowActivity extends SelfCommonActivity {
     @Override
     protected boolean showTitleBar() {
         return false;
-    }
-
-    @Override
-    protected void countDownFinish() {
-
-    }
-
-    @Override
-    protected void showCountDownTime(int time) {
-
     }
 
 

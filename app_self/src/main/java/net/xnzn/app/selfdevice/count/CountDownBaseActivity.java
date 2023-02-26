@@ -20,8 +20,8 @@ public abstract class CountDownBaseActivity extends BaseTitleBarActivity {
     private Disposable mDDisposable;
     private static final String TAG = "CountDownBaseActivity";
     private boolean isStop = false;
-    private int COUNT_TIME_TIME = 30;
-    private int NO_ACTION_TIME = 10;
+    private int COUNT_TIME_TIME = 0;
+    private int NO_ACTION_TIME = 0;
 
     public long getCountTime() {
         return countTime;
@@ -43,24 +43,39 @@ public abstract class CountDownBaseActivity extends BaseTitleBarActivity {
 
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-
+    public boolean dispatchTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_UP:
                 resetTime();
                 break;
         }
-
-        return super.onTouchEvent(event);
+        return super.dispatchTouchEvent(event);
     }
+
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//            case MotionEvent.ACTION_UP:
+//                resetTime();
+//                break;
+//        }
+//
+//        return super.onTouchEvent(event);
+//    }
 
     /**
      * 用户点击了屏幕 取消倒计时操作
      */
-    protected void resetTime() {
+    protected synchronized void resetTime() {
 
         try {
+
+            if (COUNT_TIME_TIME == 0 && NO_ACTION_TIME == 0)//都为0说明没有设置过，则第一次进来时 不执行
+                return;
+
             if (mDDisposable != null)
                 mDDisposable.dispose();
 
@@ -99,7 +114,7 @@ public abstract class CountDownBaseActivity extends BaseTitleBarActivity {
 //                        playRecordTime = value;
 //                        String format = sdf.format(new Date((answerTime - playRecordTime) * 1000));
 //                        mTimeTv.setText(format);
-                        L.i(TAG + ": onNext:" + value);
+//                        L.i(TAG + ": onNext:" + value + ",COUNT_TIME_TIME:" + COUNT_TIME_TIME + ",NO_ACTION_TIME:" + NO_ACTION_TIME);
 
                         if (isStop)
                             return;
@@ -143,6 +158,14 @@ public abstract class CountDownBaseActivity extends BaseTitleBarActivity {
         super.onPause();
 
         stop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        isStop = false;
+        resetTime();
     }
 
     @Override

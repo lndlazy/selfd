@@ -15,7 +15,6 @@ import java.util.List;
 
 public class MenuShowAdapter extends RecyclerView.Adapter<MenuShowAdapter.VH> {
 
-
     private List<MenuFoodsDetailBean> lists;
     private Context context;
 

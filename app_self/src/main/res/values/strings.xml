@@ -14,4 +14,5 @@
     <string name="welUseLeniu">欢迎使用 乐牛自助终端</string>
     <string name="menu_show_title_info"><![CDATA[首页>菜谱公示]]></string>
     <string name="show_qrcode_to_pay">请出示付款码，对准设备下方扫码口进行支付</string>
+    <string name="charge_fail_retry_later">充值失败，请稍后再试！</string>
 </resources>

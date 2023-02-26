@@ -4,22 +4,14 @@ import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
 
 public class SettingActivity extends SelfCommonActivity {
-    @Override
-    protected void countDownFinish() {
 
-    }
 
     @Override
     protected void initView() {
         super.initView();
 
-
     }
 
-    @Override
-    protected void showCountDownTime(int time) {
-
-    }
 
     @Override
     protected boolean showTitle() {
@@ -31,10 +23,6 @@ public class SettingActivity extends SelfCommonActivity {
         return false;
     }
 
-    @Override
-    protected boolean showTimeTitle() {
-        return false;
-    }
 
     @Override
     protected int showView() {
@@ -43,7 +31,7 @@ public class SettingActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
-
+        countDown(10, 20);
     }
 
     @Override

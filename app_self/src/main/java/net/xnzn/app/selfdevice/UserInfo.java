@@ -1,9 +1,9 @@
 package net.xnzn.app.selfdevice;
 
-public interface UserInfo {
+public class UserInfo {
 
-    boolean isLogin = false;
+    public static boolean isLogin = false;
 
-    String userName = "";
+    public static String userName = "";
 
 }

@@ -5,7 +5,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.menu.bean.MenuChooseBean;
@@ -15,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jingbin.library.ByRecyclerView;
-import me.jingbin.library.decoration.SpacesItemDecoration;
 
 public class MenuChooseActivity extends SelfCommonActivity {
 
@@ -31,11 +29,6 @@ public class MenuChooseActivity extends SelfCommonActivity {
 
     @Override
     protected boolean showBar() {
-        return false;
-    }
-
-    @Override
-    protected boolean showTimeTitle() {
         return false;
     }
 
@@ -84,6 +77,7 @@ public class MenuChooseActivity extends SelfCommonActivity {
                 //BG-31881908220060
             }
         });
+        countDown(10, 20);
     }
 
     @Override
@@ -92,14 +86,7 @@ public class MenuChooseActivity extends SelfCommonActivity {
         ivBack.setOnClickListener(view -> finish());
     }
 
-    @Override
-    protected void countDownFinish() {
 
-        finish();
-    }
 
-    @Override
-    protected void showCountDownTime(int time) {
-        tvCount.setText(time < 0 ? "" : (time + "s"));
-    }
+
 }

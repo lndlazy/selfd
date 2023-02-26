@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_gray">
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="410dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_query_search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSearch"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="426dp"
+        android:background="@drawable/shape_query_search_btn"
+        android:drawableLeft="@mipmap/ic_search"
+        android:drawablePadding="-20dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="搜索"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/etSearch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/etSearch" />
+
+    <TextView
+        android:id="@+id/tvFilter"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/shape_query_filter"
+        android:drawableLeft="@mipmap/ic_filter"
+        android:drawablePadding="-20dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="筛选"
+        android:textColor="@color/text_color_666"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/etSearch"
+        app:layout_constraintLeft_toRightOf="@id/tvSearch"
+        app:layout_constraintTop_toTopOf="@id/etSearch" />
+
+    <me.jingbin.library.ByRecyclerView
+        android:id="@+id/byRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/etSearch"
+        app:layout_constraintRight_toRightOf="@id/tvFilter"
+        app:layout_constraintTop_toBottomOf="@id/etSearch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

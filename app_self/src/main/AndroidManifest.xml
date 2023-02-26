@@ -33,6 +33,8 @@
         <activity android:name=".menu.MenuShowActivity" />
         <activity android:name=".setting.SettingActivity" />
         <activity android:name=".charge.ChargeActivity" />
+        <activity android:name=".query.QueryActivity" />
+        <activity android:name=".query.CommentActivity" />
     </application>
 
 </manifest>

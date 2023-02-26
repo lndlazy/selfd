@@ -26,8 +26,11 @@ public class ChargeActivity extends SelfCommonActivity {
     protected TextView tvChargeMoney;
     protected TextView tvCancelCharge;
     protected ImageView ivLoading;
-    protected Dialog chargeDialog;
+    private Dialog chargeDialog;
+    private Dialog chargeFailDialog;
+
     protected ObjectAnimator rotation;
+    protected TextView tvFailSeconds;
 
     @Override
     protected void initView() {
@@ -74,15 +77,7 @@ public class ChargeActivity extends SelfCommonActivity {
         });
     }
 
-    @Override
-    protected void countDownFinish() {
 
-    }
-
-    @Override
-    protected void showCountDownTime(int time) {
-
-    }
 
     @Override
     protected boolean showTitle() {
@@ -100,11 +95,6 @@ public class ChargeActivity extends SelfCommonActivity {
     }
 
     @Override
-    protected boolean showTimeTitle() {
-        return false;
-    }
-
-    @Override
     protected int showView() {
         return R.layout.activity_charge;
     }
@@ -117,7 +107,8 @@ public class ChargeActivity extends SelfCommonActivity {
     @Override
     protected void initLisitener() {
         tvCharge.setOnClickListener(v -> {
-            showChargeDialog();
+//            showChargeDialog();
+            showChargeFailDialog();
             startCharge();
         });
     }
@@ -136,9 +127,7 @@ public class ChargeActivity extends SelfCommonActivity {
             rotation.setDuration(2000);
             rotation.setRepeatCount(30);
             tvCancelCharge.setOnClickListener(v -> {
-                if (chargeDialog != null && chargeDialog.isShowing()) {
-                    chargeDialog.dismiss();
-                }
+                disMissDialog();
 
                 if (rotation != null)
                     rotation.cancel();
@@ -157,5 +146,44 @@ public class ChargeActivity extends SelfCommonActivity {
     //开始充值
     private void startCharge() {
 
+    }
+
+    private void showChargeFailDialog() {
+
+        if (chargeFailDialog == null) {
+            chargeFailDialog = new Dialog(this);
+            chargeFailDialog.setContentView(R.layout.dialog_charge_fail);
+            tvFailSeconds = chargeFailDialog.findViewById(R.id.tvFailSeconds);
+            TextView tvExit = chargeFailDialog.findViewById(R.id.tvExit);
+            TextView tvContain = chargeFailDialog.findViewById(R.id.tvContain);
+
+            //退出充值页面， 返回首页
+            tvExit.setOnClickListener(v -> {
+                disMissDialog();
+                finish();
+            });
+            tvContain.setOnClickListener(v -> {
+
+            });
+        }
+
+        if (chargeFailDialog != null && !chargeFailDialog.isShowing())
+            chargeFailDialog.show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        disMissDialog();
+
+    }
+
+    private void disMissDialog() {
+        if (chargeFailDialog != null && chargeFailDialog.isShowing())
+            chargeFailDialog.dismiss();
+
+        if (chargeDialog != null && chargeDialog.isShowing())
+            chargeDialog.dismiss();
     }
 }

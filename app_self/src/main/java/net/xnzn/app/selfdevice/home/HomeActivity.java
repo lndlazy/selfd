@@ -12,6 +12,7 @@ import net.xnzn.app.selfdevice.UserInfo;
 import net.xnzn.app.selfdevice.charge.ChargeActivity;
 import net.xnzn.app.selfdevice.login.LoginActivity;
 import net.xnzn.app.selfdevice.menu.MenuChooseActivity;
+import net.xnzn.app.selfdevice.query.QueryActivity;
 import net.xnzn.app.selfdevice.setting.SettingActivity;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
 import net.xnzn.app.selfdevice.utils.DateHelper;
@@ -44,10 +45,10 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         return false;
     }
 
-    @Override
-    protected boolean showTimeTitle() {
-        return true;
-    }
+//    @Override
+//    protected boolean showTimeTitle() {
+//        return true;
+//    }
 
 //    @Override
 //    protected int setLayoutId() {
@@ -99,7 +100,7 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 ////                .setNoShowDivider(1, 1)
 //                // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
 //                .setParam(R.color.translucent, 30, 0, 0);
-         SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this, SpacesItemDecoration.HORIZONTAL)
+        SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this, SpacesItemDecoration.HORIZONTAL)
 //                .setNoShowDivider(1, 1)
                 // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
                 .setParam(R.color.translucent, 20, 0, 0);
@@ -115,11 +116,11 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
                     case 0:
                         startActivity(MenuChooseActivity.class);
                         break;
-                        case 1:
+                    case 1:
                         startActivity(ChargeActivity.class);
                         break;
                     case 2:
-                        startActivity(LoginActivity.class);
+                        startActivity(QueryActivity.class);
                         break;
 
                 }
@@ -220,13 +221,6 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 //                }
                 break;
         }
-    }
-
-    private void loginOut() {
-
-        if (dialog != null && dialog.isShowing())
-            dialog.dismiss();
-
     }
 
 

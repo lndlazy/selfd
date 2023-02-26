@@ -34,17 +34,17 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
         return false;
     }
 
-    @Override
-    protected void countDownFinish() {
-        //倒计时完成
-        finish();
-    }
+//    @Override
+//    protected void countDownFinish() {
+//        //倒计时完成
+//        finish();
+//    }
 
-    @Override
-    protected void showCountDownTime(int time) {
-        L.i("时间::" + time);
-        tvCount.setText(time < 0 ? "" : (time + "s"));
-    }
+//    @Override
+//    protected void showCountDownTime(int time) {
+//        L.i("时间::" + time);
+//        tvCount.setText(time < 0 ? "" : (time + "s"));
+//    }
 
     @Override
     protected boolean showTitle() {
@@ -54,11 +54,6 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
     @Override
     protected boolean showBar() {
-        return false;
-    }
-
-    @Override
-    protected boolean showTimeTitle() {
         return false;
     }
 
@@ -95,9 +90,7 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
         changeCodeLogin();
 
-        setNoActionTime(10);
-        setCountTime(20);
-        startCountDown();
+        countDown(10, 20);
 
     }
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/top_margin"
+    android:background="@color/page_bg_gray">
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gray_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        app:tabMaxWidth="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v1"
+        app:tabGravity="start"
+        app:tabIndicatorColor="@color/theme_color"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/theme_color"
+        app:tabTextColor="@color/color_999"
+        app:tabUnboundedRipple="true">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!--
+        tabIndicatorColor  指示器颜色
+        tabIndicatorHeight 指示器高度
+        tabIndicatorFullWidth  设置为false 则指示器跟文本宽度一致
+        tabUnboundedRipple 设置为true点击时会有一个水波纹效果
+        tabGravity 可设置center或fill；center指的是居中显示，fill指的是沾满全屏。
+        tabMode 可设置fixed和 scrollable；fixed：指的是固定tab；scrollable指的是tab可滑动。
+        tabTextColor tab文字颜色
+        tabSelectedTextColor 选中时的tab颜色
+    -->
+
+    <!-- ViewPager2内部通过RecyclerView
+         所以需要通过orientation来设置页面切换方向-->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
