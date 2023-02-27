@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class OrderItemBean {
 
+  private int id;
   private String type;
   private Date date;
   private String title;
@@ -17,6 +18,17 @@ public class OrderItemBean {
   }
 
   public OrderItemBean(String type, Date date, String title, String status, String price, int count, String[] urls) {
+    this.type = type;
+    this.date = date;
+    this.title = title;
+    this.status = status;
+    this.price = price;
+    this.count = count;
+    this.urls = urls;
+  }
+
+  public OrderItemBean(int id, String type, Date date, String title, String status, String price, int count, String[] urls) {
+    this.id = id;
     this.type = type;
     this.date = date;
     this.title = title;
@@ -82,10 +94,19 @@ public class OrderItemBean {
     this.urls = urls;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
   @Override
   public String toString() {
     return "OrderItemBean{" +
-            "type='" + type + '\'' +
+            "id=" + id +
+            ", type='" + type + '\'' +
             ", date=" + date +
             ", title='" + title + '\'' +
             ", status='" + status + '\'' +

@@ -14,6 +14,13 @@ import net.xnzn.app.selfdevice.R;
 public class OrderDetailFragment extends Fragment {
 
 
+    public OrderDetailFragment() {
+    }
+
+    public OrderDetailFragment(int contentLayoutId) {
+        super(contentLayoutId);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

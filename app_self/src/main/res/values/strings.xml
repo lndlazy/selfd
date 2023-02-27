@@ -15,4 +15,7 @@
     <string name="menu_show_title_info"><![CDATA[首页>菜谱公示]]></string>
     <string name="show_qrcode_to_pay">请出示付款码，对准设备下方扫码口进行支付</string>
     <string name="charge_fail_retry_later">充值失败，请稍后再试！</string>
+    <string name="card_login">请在下方感应区刷卡认证</string>
+    <string name="face_login">请正视摄像头刷脸认证</string>
+    <string name="scan_login">请在下方扫码口扫码认证</string>
 </resources>

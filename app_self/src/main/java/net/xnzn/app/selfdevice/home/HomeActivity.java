@@ -1,11 +1,14 @@
 package net.xnzn.app.selfdevice.home;
 
 import android.app.Dialog;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.UserInfo;
@@ -24,6 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jingbin.library.ByRecyclerView;
+import me.jingbin.library.adapter.BaseByViewHolder;
+import me.jingbin.library.adapter.BaseRecyclerAdapter;
 import me.jingbin.library.decoration.SpacesItemDecoration;
 
 public class HomeActivity extends SelfCommonActivity implements View.OnClickListener {
@@ -92,22 +97,43 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 
         initHomeItem();
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        HomeAdapter homeAdapter = new HomeAdapter(this, homeItems);
+//        HomeAdapter homeAdapter = new HomeAdapter(this, homeItems);
 
-        homeAdapter.setNewData(homeItems);
+//        homeAdapter.setNewData(homeItems);
 ////         选择2：设置颜色、高度、间距等
-//        SpacesItemDecoration itemDecoration = new SpacesItemDecoration(this, SpacesItemDecoration.VERTICAL)
-////                .setNoShowDivider(1, 1)
-//                // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
-//                .setParam(R.color.translucent, 30, 0, 0);
-        SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this, SpacesItemDecoration.HORIZONTAL)
+        SpacesItemDecoration itemDecoration = new SpacesItemDecoration(this, SpacesItemDecoration.VERTICAL)
 //                .setNoShowDivider(1, 1)
                 // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
-                .setParam(R.color.translucent, 20, 0, 0);
+                .setParam(R.color.translucent, 30, 0, 0);
+//        SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this, SpacesItemDecoration.HORIZONTAL)
+////                .setNoShowDivider(1, 1)
+//                // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
+//                .setParam(R.color.translucent, 20, 0, 0);
 
-//        recyclerView.addItemDecoration(itemDecoration);
-        recyclerView.addItemDecoration(itemDecoration2);
+        recyclerView.addItemDecoration(itemDecoration);
+//        recyclerView.addItemDecoration(itemDecoration2);
+        BaseRecyclerAdapter<HomeItem> homeAdapter = new BaseRecyclerAdapter<HomeItem>(R.layout.layout_home_item) {
+
+            @Override
+            protected void bindView(BaseByViewHolder<HomeItem> holder, HomeItem bean, int position) {
+                TextView tvDesc = holder.getView(R.id.tvDesc);
+
+                holder.setBackgroundRes(R.id.cl, homeItems.get(position).getResId());
+//                holder.setImageResource(R.id.ivImg, homeItems.get(position).getResId());
+                holder.setText(R.id.tvContent, homeItems.get(position).getContent());
+
+                if (TextUtils.isEmpty(homeItems.get(position).getDesc())) {
+                    tvDesc.setVisibility(View.GONE);
+                } else {
+                    tvDesc.setVisibility(View.VISIBLE);
+                    holder.setText(R.id.tvDesc, homeItems.get(position).getDesc());
+
+                }
+
+            }
+        };
         recyclerView.setAdapter(homeAdapter);
+        homeAdapter.setNewData(homeItems);
         recyclerView.setOnItemClickListener(new ByRecyclerView.OnItemClickListener() {
             @Override
             public void onClick(View v, int position) {

@@ -1,11 +1,7 @@
 package net.xnzn.app.selfdevice.menu.adapter;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -13,13 +9,11 @@ import com.google.android.material.chip.ChipGroup;
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.menu.bean.MenuFoodsDetailBean;
 import net.xnzn.app.selfdevice.utils.DensityUtil;
-import net.xnzn.lib_commin_ui.recyclerview.MultiItemTypeAdapter;
 
 import java.util.List;
 
 import me.jingbin.library.adapter.BaseByViewHolder;
 import me.jingbin.library.adapter.BaseRecyclerAdapter;
-import me.jingbin.library.stickyview.StickyHeaderHandler;
 
 public class MenuFoodsAdapter extends BaseRecyclerAdapter<MenuFoodsDetailBean> {
 
@@ -50,7 +44,7 @@ public class MenuFoodsAdapter extends BaseRecyclerAdapter<MenuFoodsDetailBean> {
 //        ImageView ivUrl = holder.getView(R.id.ivUrl);
 
 //        holder.setImageResource(R.id.iv, lists.get(position).getPicUrl());
-        holder.setText(R.id.tvName, lists.get(position).getName());
+        holder.setText(R.id.tvDetailName, lists.get(position).getName());
         holder.setText(R.id.tvSale, "月销" + lists.get(position).getSaleCount());
         holder.setText(R.id.tvGoods, "好评率" + lists.get(position).getGoods());
         holder.setText(R.id.tvPrice, "￥" + lists.get(position).getPrice());

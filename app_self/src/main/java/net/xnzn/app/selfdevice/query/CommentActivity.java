@@ -75,7 +75,7 @@ public class CommentActivity extends SelfCommonActivity {
 
             @Override
             protected void bindView(BaseByViewHolder<FoodsBean> holder, FoodsBean bean, int position) {
-                holder.setText(R.id.tvName, bean.getName());
+                holder.setText(R.id.tvDetailName, bean.getName());
 
                 RatingStar rs = holder.getView(R.id.rs);
 
@@ -130,7 +130,7 @@ public class CommentActivity extends SelfCommonActivity {
     private void submitComment() {
 
         for (int i = 0; i < ratingStars.size(); i++) {
-            System.out.println("ratingStars:::" + ratingStars.get(i).getmGrade());
+//            System.out.println("ratingStars:::" + ratingStars.get(i).getmGrade());
         }
 
     }

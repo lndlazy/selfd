@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.tabs.TabLayout;
 
 import net.xnzn.app.selfdevice.R;
-import net.xnzn.app.selfdevice.menu.adapter.MenuFoodsAdapter;
-import net.xnzn.app.selfdevice.menu.adapter.MenuShowAdapter;
-import net.xnzn.app.selfdevice.menu.adapter.MenuTypeAdapter;
 import net.xnzn.app.selfdevice.menu.adapter.MenuDateAdapter;
+import net.xnzn.app.selfdevice.menu.adapter.MenuFoodsAdapter;
+import net.xnzn.app.selfdevice.menu.adapter.MenuTypeAdapter;
 import net.xnzn.app.selfdevice.menu.bean.MenuDateShowBean;
 import net.xnzn.app.selfdevice.menu.bean.MenuFoodsDetailBean;
 import net.xnzn.app.selfdevice.menu.bean.MenuTypeBean;
@@ -37,6 +36,7 @@ public class MenuShowActivity extends SelfCommonActivity {
         brDateRecyclerView = findViewById(R.id.brDateRecyclerView);
         brTypeRecyclerView = findViewById(R.id.brTypeRecyclerView);
         brMenuRecyclerView = findViewById(R.id.brMenuRecyclerView);
+
 
         tabLayout = findViewById(R.id.tab);
 
@@ -96,6 +96,7 @@ public class MenuShowActivity extends SelfCommonActivity {
     }
 
     private void setTypeAdapter() {
+
 
         List<MenuTypeBean> typeList = new ArrayList<>();
         typeList.add(new MenuTypeBean(1, "推荐"));

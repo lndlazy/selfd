@@ -1,6 +1,5 @@
 package net.xnzn.app.selfdevice.menu;
 
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.jingbin.library.ByRecyclerView;
+import me.jingbin.library.adapter.BaseByViewHolder;
+import me.jingbin.library.adapter.BaseRecyclerAdapter;
 
 public class MenuChooseActivity extends SelfCommonActivity {
 
@@ -58,7 +59,14 @@ public class MenuChooseActivity extends SelfCommonActivity {
         chooseBeanList.add(new MenuChooseBean(3, "自助餐菜谱", ""));
         chooseBeanList.add(new MenuChooseBean(4, "自助餐菜谱", ""));
         byRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        MenuChooseAdapter chooseAdapter = new MenuChooseAdapter(chooseBeanList);
+        BaseRecyclerAdapter<MenuChooseBean> chooseAdapter = new BaseRecyclerAdapter<MenuChooseBean>(R.layout.menu_choose_item) {
+
+
+            @Override
+            protected void bindView(BaseByViewHolder<MenuChooseBean> holder, MenuChooseBean bean, int position) {
+                holder.setText(R.id.tvMenuName, chooseBeanList.get(position).getName());
+            }
+        };
 
 //        SpacesItemDecoration itemDecoration2 = new SpacesItemDecoration(this)
 ////                .setNoShowDivider(1, 1)
@@ -70,12 +78,9 @@ public class MenuChooseActivity extends SelfCommonActivity {
 
         byRecyclerView.setAdapter(chooseAdapter);
         chooseAdapter.setNewData(chooseBeanList);
-        byRecyclerView.setOnItemClickListener(new ByRecyclerView.OnItemClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                startActivity(MenuShowActivity.class);
-                //BG-31881908220060
-            }
+        byRecyclerView.setOnItemClickListener((v, position) -> {
+            startActivity(MenuShowActivity.class);
+            //BG-31881908220060
         });
         countDown(10, 20);
     }
@@ -85,8 +90,6 @@ public class MenuChooseActivity extends SelfCommonActivity {
 
         ivBack.setOnClickListener(view -> finish());
     }
-
-
 
 
 }

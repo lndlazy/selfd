@@ -96,7 +96,7 @@ public class MenuShowAdapter extends RecyclerView.Adapter<MenuShowAdapter.VH> {
 
             tvTit = itemView.findViewById(R.id.tvTit);
             tvSale = itemView.findViewById(R.id.tvSale);
-            tvName = itemView.findViewById(R.id.tvName);
+            tvName = itemView.findViewById(R.id.tvDetailName);
             tvGoods = itemView.findViewById(R.id.tvGoods);
             tvPrice = itemView.findViewById(R.id.tvPrice);
 

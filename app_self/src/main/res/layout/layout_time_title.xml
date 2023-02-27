@@ -13,7 +13,7 @@
         android:layout_marginTop="10dp"
         android:text="14:32"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="38sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +25,7 @@
         android:layout_marginTop="5dp"
         android:text="02-22"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textSize="18sp"
         app:layout_constraintLeft_toRightOf="@id/tvTime"
         app:layout_constraintTop_toTopOf="@id/tvTime" />
 
@@ -35,14 +35,14 @@
         android:layout_height="wrap_content"
         android:text="星期二"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/tvTime"
         app:layout_constraintLeft_toLeftOf="@id/tvDate" />
 
     <ImageView
         android:id="@+id/ivSetting"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginRight="26dp"
         android:padding="5dp"
         android:src="@mipmap/ic_setting"

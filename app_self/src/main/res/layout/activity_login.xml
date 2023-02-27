@@ -15,10 +15,10 @@
         android:id="@+id/v1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="145dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/shape_white_bg_cir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -37,9 +37,12 @@
     <TextView
         android:id="@+id/tvCodeLogin"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="120dp"
         android:gravity="center"
         android:text="验证码登录"
+        android:textColor="@color/text_color_33"
+        android:textSize="35sp"
         app:layout_constraintLeft_toLeftOf="@id/v1"
         app:layout_constraintRight_toRightOf="@id/v2"
         app:layout_constraintTop_toTopOf="@id/v1" />
@@ -47,16 +50,18 @@
     <TextView
         android:id="@+id/tvPwdLogin"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:gravity="center"
         android:text="密码登录"
+        android:textColor="@color/text_color_33"
+        android:textSize="35sp"
         app:layout_constraintLeft_toLeftOf="@id/v2"
         app:layout_constraintRight_toRightOf="@id/v1"
-        app:layout_constraintTop_toTopOf="@id/v1" />
+        app:layout_constraintTop_toTopOf="@id/tvCodeLogin" />
 
     <View
         android:id="@+id/line1"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="3dp"
         android:background="@color/theme_color"
         app:layout_constraintLeft_toLeftOf="@id/tvCodeLogin"
@@ -65,7 +70,7 @@
 
     <View
         android:id="@+id/line2"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="3dp"
         android:background="@color/theme_color"
         app:layout_constraintLeft_toLeftOf="@id/tvPwdLogin"
@@ -87,12 +92,15 @@
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="50dp"
         android:hint="@string/etPhoneLoginInit"
+        android:paddingLeft="10dp"
         android:singleLine="true"
+        android:textColor="@color/text_color_80"
+        android:textSize="35sp"
         android:theme="@style/EditTextStyle"
         app:layout_constraintLeft_toLeftOf="@id/tvCodeLogin"
         app:layout_constraintRight_toRightOf="@id/v1"
@@ -102,12 +110,14 @@
     <EditText
         android:id="@+id/etPwd"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="5dp"
         android:hint="@string/etCodeLogInit"
+        android:paddingLeft="10dp"
         android:singleLine="true"
-        android:textSize="12sp"
+        android:textColor="@color/text_color_80"
+        android:textSize="35sp"
         android:theme="@style/EditTextStyle"
         app:layout_constraintLeft_toLeftOf="@id/etUsername"
         app:layout_constraintRight_toRightOf="@id/etUsername"
@@ -116,32 +126,33 @@
 
     <TextView
         android:id="@+id/tvGetCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/shape_theme_color_login"
+        android:gravity="center"
         android:paddingLeft="5dp"
         android:paddingTop="3dp"
         android:paddingRight="5dp"
-        android:paddingBottom="3dp"
+        android:paddingBottom="5dp"
         android:text="获取验证码"
         android:textColor="@color/white"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/etPwd"
         app:layout_constraintRight_toRightOf="@id/etUsername" />
-
 
     <TextView
         android:id="@+id/tvLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/shape_theme_color_login"
         android:gravity="center"
         android:padding="8dp"
         android:text="登录"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="35sp"
         app:layout_constraintLeft_toLeftOf="@id/etUsername"
         app:layout_constraintRight_toRightOf="@id/etUsername"
         app:layout_constraintTop_toBottomOf="@id/etPwd" />
@@ -152,16 +163,16 @@
         android:id="@+id/t3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="150dp"
         android:text="@string/otherLoginType"
         android:textColor="@color/theme_color"
-        android:textSize="15sp"
+        android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvLogin" />
 
     <ImageView
-        android:layout_width="120dp"
+        android:layout_width="320dp"
         android:layout_height="1dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/shape_login_other_left"
@@ -170,7 +181,7 @@
         app:layout_constraintTop_toTopOf="@id/t3" />
 
     <ImageView
-        android:layout_width="120dp"
+        android:layout_width="320dp"
         android:layout_height="1dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/shape_login_other_right"
@@ -180,9 +191,9 @@
 
     <ImageView
         android:id="@+id/ivCard"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:src="@mipmap/ic_card_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -191,18 +202,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="刷卡登录"
         android:textColor="@color/theme_color"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/ivCard"
         app:layout_constraintRight_toRightOf="@id/ivCard"
         app:layout_constraintTop_toBottomOf="@id/ivCard" />
 
     <ImageView
         android:id="@+id/ivFace"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="150dp"
         android:src="@mipmap/ic_login_face"
         app:layout_constraintRight_toLeftOf="@id/ivCard"
         app:layout_constraintTop_toTopOf="@id/ivCard" />
@@ -210,18 +222,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="刷脸登录"
         android:textColor="@color/theme_color"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/ivFace"
         app:layout_constraintRight_toRightOf="@id/ivFace"
         app:layout_constraintTop_toBottomOf="@id/ivFace" />
 
     <ImageView
         android:id="@+id/ivScan"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="150dp"
         android:src="@mipmap/ic_scan_login"
         app:layout_constraintLeft_toRightOf="@id/ivCard"
         app:layout_constraintTop_toTopOf="@id/ivCard" />
@@ -229,9 +242,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="扫码登录"
         android:textColor="@color/theme_color"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/ivScan"
         app:layout_constraintRight_toRightOf="@id/ivScan"
         app:layout_constraintTop_toBottomOf="@id/ivScan" />

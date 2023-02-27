@@ -2,15 +2,106 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/page_bg_gray"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="营养检测"
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gray_line"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_white_bg_cir"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <!--    标题-->
+
+    <ImageView
+        android:id="@+id/ivNutritionPic"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginLeft="30dp"
+        android:src="@mipmap/ic_head_pic"
+        app:layout_constraintBottom_toBottomOf="@id/v2"
+        app:layout_constraintLeft_toLeftOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/v2" />
+
+    <TextView
+        android:id="@+id/tvNutritionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:text="张散散"
+        android:textColor="@color/text_color_33"
+        android:textSize="29sp"
+        app:layout_constraintLeft_toRightOf="@id/ivNutritionPic"
+        app:layout_constraintTop_toTopOf="@id/ivNutritionPic" />
+
+    <TextView
+        android:id="@+id/tvDetailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="年龄：20"
+        android:textColor="@color/text_color_666"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@id/tvNutritionName"
+        app:layout_constraintTop_toBottomOf="@id/tvNutritionName" />
+
+    <TextView
+        android:id="@+id/tvNutritionDepart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:text="部门：电子商务部"
+        android:textColor="@color/text_color_666"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/tvDetailAddress"
+        app:layout_constraintTop_toBottomOf="@id/tvNutritionName" />
+
+    <ImageView
+        android:id="@+id/ivNutritionGender"
+        android:layout_width="110dp"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/v2"
+        app:layout_constraintBottom_toBottomOf="@id/v2"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_female"
+        android:layout_height="110dp"/>
+
+<!--    查询的信息    -->
+
+    <View
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_white_bg_cir"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintTop_toBottomOf="@id/v2"
+        android:layout_marginTop="20dp"
+        android:layout_height="650dp"/>
+
+
+
+    <TextView
+        android:id="@+id/tvTodayQuery"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

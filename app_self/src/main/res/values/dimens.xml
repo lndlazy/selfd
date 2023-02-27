@@ -3,5 +3,6 @@
     <dimen name="charge_size_1">20sp</dimen>
     <dimen name="charge_size_2">25sp</dimen>
     <dimen name="charge_margin_1">40dp</dimen>
-    <dimen name="top_margin">140dp</dimen>
+    <dimen name="top_margin">180dp</dimen>
+    <dimen name="title_height">100dp</dimen>
 </resources>

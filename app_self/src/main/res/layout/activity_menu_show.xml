@@ -50,6 +50,17 @@
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/theme_color" />
 
+
+<!--    <q.rorbin.verticaltablayout.VerticalTabLayout-->
+<!--        android:id="@+id/vtlType"-->
+<!--        android:layout_width="145dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:overScrollMode="never"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tab" />-->
+
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brTypeRecyclerView"
         android:layout_width="145dp"

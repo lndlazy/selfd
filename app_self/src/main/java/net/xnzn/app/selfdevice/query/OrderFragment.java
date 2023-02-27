@@ -1,7 +1,9 @@
 package net.xnzn.app.selfdevice.query;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +28,11 @@ import java.util.List;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.adapter.BaseByViewHolder;
 import me.jingbin.library.adapter.BaseRecyclerAdapter;
+import rxhttp.wrapper.utils.LogUtil;
 
 public class OrderFragment extends Fragment implements View.OnClickListener {
 
+    private static final String TAG = "OrderFragment";
     protected EditText etSearch;
     protected TextView tvSearch;
     protected TextView tvFilter;
@@ -49,6 +53,8 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
         return view;
 
     }
+
+    private int orderId = -1;
 
     private void initData() {
 
@@ -71,7 +77,7 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
 
                 ByRecyclerView picRecyclerView = holder.getView(R.id.itemPicRecyclerView);
                 loadPic(picRecyclerView, bean.getUrls());
-                holder.addOnClickListener(R.id.tvComment);
+                holder.addOnClickListener(R.id.tvDetailComment);
 
             }
         };
@@ -79,17 +85,24 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
         byRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        byRecyclerView.set
         byRecyclerView.setAdapter(itemAdapter);
-        byRecyclerView.setOnItemChildClickListener(new ByRecyclerView.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(View view, int position) {
-                System.out.println("onclick:::" + position + ",:" + view);
+        byRecyclerView.setOnItemChildClickListener((view, position) -> {
+            Log.d(TAG, "onclick:::" + position + ",:" + view);
 
-                Intent intent = new Intent(getActivity(), CommentActivity.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(getActivity(), CommentActivity.class);
+            intent.putExtra("id", itemList.get(position).getId());
+            startActivity(intent);
         });
 
+        //订单详情
         byRecyclerView.setOnItemClickListener((v, position) -> {
+            Activity activity = getActivity();
+
+            if (activity != null) {
+                orderId = itemList.get(position).getId();
+                QueryActivity queryActivity = (QueryActivity) activity;
+                queryActivity.orderDetail(orderId);
+
+            }
 
         });
     }
