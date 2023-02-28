@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="charge_size_1">20sp</dimen>
-    <dimen name="charge_size_2">25sp</dimen>
-    <dimen name="charge_margin_1">40dp</dimen>
-    <dimen name="top_margin">180dp</dimen>
-    <dimen name="title_height">100dp</dimen>
+    <dimen name="charge_size_1">34px</dimen>
+    <dimen name="charge_size_2">43px</dimen>
+    <dimen name="charge_margin_1">40px</dimen>
+    <dimen name="line_height_1">78px</dimen>
+    <dimen name="top_margin">224px</dimen>
+    <dimen name="title_height">136px</dimen>
+    <dimen name="margin_bottom_1">13px</dimen>
+    <dimen name="height_80px">80px</dimen>
+    <dimen name="margin_40px">40px</dimen>
+    <dimen name="text_size_32">32px</dimen>
+    <dimen name="margin_20px">30px</dimen>
 </resources>

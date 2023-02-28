@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_width="718px"
+    android:layout_height="263px"
     android:background="@drawable/shape_white_bg_cir">
 
     <ImageView
         android:id="@+id/ivUrl"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginLeft="15dp"
+        android:layout_width="202px"
+        android:layout_height="192px"
+        android:layout_marginLeft="30px"
         android:src="@mipmap/ic_menu_food_show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,10 +19,10 @@
         android:id="@+id/tvDetailName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="20px"
         android:text="红烧狮子头"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="40px"
         app:layout_constraintLeft_toRightOf="@id/ivUrl"
         app:layout_constraintTop_toTopOf="@id/ivUrl" />
 
@@ -35,17 +35,17 @@
         app:layout_constraintTop_toBottomOf="@id/tvDetailName"
         app:singleLine="true">
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:checkable="false"
-            android:text="微甜"
-            android:textColor="@color/theme_color"
-            android:textSize="10sp"
-            app:chipBackgroundColor="@color/white"
-            app:chipCornerRadius="2dp"
-            app:chipStrokeColor="@color/theme_color"
-            app:chipStrokeWidth="1dp" />
+<!--        <com.google.android.material.chip.Chip-->
+<!--            android:layout_width="70px"-->
+<!--            android:layout_height="50px"-->
+<!--            android:checkable="false"-->
+<!--            android:text="微甜"-->
+<!--            android:textColor="@color/theme_color"-->
+<!--            android:textSize="18px"-->
+<!--            app:chipBackgroundColor="@color/white"-->
+<!--            app:chipCornerRadius="2dp"-->
+<!--            app:chipStrokeColor="@color/theme_color"-->
+<!--            app:chipStrokeWidth="1dp" />-->
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="月销6"
         android:textColor="@color/text_color_b3"
-        android:textSize="13sp"
+        android:textSize="26px"
         app:layout_constraintLeft_toLeftOf="@id/tvDetailName"
         app:layout_constraintTop_toBottomOf="@id/cgTips" />
 
@@ -63,11 +63,11 @@
         android:id="@+id/tvGoods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="30px"
         android:layout_marginTop="2dp"
         android:text="好评率98%"
         android:textColor="@color/text_color_b3"
-        android:textSize="13sp"
+        android:textSize="26px"
         app:layout_constraintLeft_toRightOf="@id/tvSale"
         app:layout_constraintTop_toBottomOf="@id/cgTips" />
 
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="￥2.00"
         android:textColor="@color/text_color_red_ff"
-        android:textSize="23sp"
+        android:textSize="36px"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@id/tvDetailName"
         app:layout_constraintTop_toBottomOf="@id/tvSale" />

@@ -41,9 +41,13 @@ public class MenuTypeAdapter extends BaseRecyclerAdapter<MenuTypeBean> {
         if (position == checkedPosition) {
             line.setVisibility(View.VISIBLE);
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.text_color_f5));
+            holder.setTextColor(R.id.tvType, context.getResources().getColor(R.color.theme_color));
+
         } else {
             line.setVisibility(View.GONE);
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.white));
+            holder.setTextColor(R.id.tvType, context.getResources().getColor(R.color.text_color_80));
+
         }
 
     }

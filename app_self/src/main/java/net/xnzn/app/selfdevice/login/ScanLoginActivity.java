@@ -1,56 +1,60 @@
 package net.xnzn.app.selfdevice.login;
 
 
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import android.Manifest;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.lib_commin_ui.base.constant.Constant;
 
-import qr.BarCodeManage;
+import android_serialport_api.SerialPortUtil;
+import qr.UsbPrinter;
+
 
 public class ScanLoginActivity extends SelfCommonActivity {
 
     private static final String TAG = "ScanLoginActivity";
 
     @Override
+    protected boolean showTitleBar() {
+        return false;
+    }
+
+
+    private final int REQUEST_CODE = 0x32;
+
+    private String[] pers = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION};
+
+    @Override
     protected void initView() {
         super.initView();
 
-        EditText etInput = findViewById(R.id.etInput);
-        etInput.setInputType(InputType.TYPE_NULL);
-        etInput.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
+        requestPermission(REQUEST_CODE, pers);
 
-
-                Log.d(TAG, "keyCode:" + keyCode);
-
-                if (KeyEvent.KEYCODE_ENTER == keyCode && event.getAction() == KeyEvent.ACTION_DOWN) {
-                    String result = etInput.getText().toString();
-                    Log.d(TAG, "扫描结果:" + result);
-
-                    if (TextUtils.isEmpty(result))
-                        return false;
-
-
-                }
-
-                return false;
-            }
-
-        });
+//        EditText etInput = findViewById(R.id.etInput);
+//        etInput.setInputType(InputType.TYPE_NULL);
+//        etInput.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                if (KeyEvent.KEYCODE_ENTER == keyCode && event.getAction() == KeyEvent.ACTION_DOWN) {
+//                    String result = etInput.getText().toString();
+//                    Log.d(TAG, "扫描结果:" + result);
+//
+//                    if (TextUtils.isEmpty(result))
+//                        return false;
+//
+//                }
+//
+//                return false;
+//            }
+//
+//        });
     }
 
     @Override
     protected boolean showTitle() {
-        return true;
+        return false;
     }
 
     @Override
@@ -65,12 +69,14 @@ public class ScanLoginActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
-
-//            BarCodeManage.getInstance().setListener(new BarCodeManage.Listener() {
-//                @Override
-//                public void onScan(String barCode) {
+//        UsbPrinter usbPrinter = new UsbPrinter(this);
+        SerialPortUtil serialPortUtil = new SerialPortUtil();
+        serialPortUtil.openSerialPort();
+//        BarCodeManage.getInstance().setListener(new BarCodeManage.Listener() {
+//            @Override
+//            public void onScan(String barCode) {
 //
-//                    Log.d(TAG, "二维码内容::" + barCode);
+//                Log.d(TAG, "二维码内容::" + barCode);
 ////                if (rlBg.getVisibility() == View.VISIBLE) {
 ////                    return;
 ////                }
@@ -79,8 +85,8 @@ public class ScanLoginActivity extends SelfCommonActivity {
 ////                request.setAuthCode(barCode);
 ////                stopVerify();
 ////                uploadData();
-//                }
-//            });
+//            }
+//        });
     }
 
     @Override
@@ -94,4 +100,6 @@ public class ScanLoginActivity extends SelfCommonActivity {
 
 //            BarCodeManage.getInstance().release();
     }
+
+
 }

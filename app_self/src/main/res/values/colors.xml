@@ -32,5 +32,7 @@
     <color name="color_e6">#E6E6E6</color>
     <color name="color_999">#999999</color>
     <color name="text_color_ef">#EF2828</color>
+    <color name="color_a31">#A31FC0</color>
+    <color name="color_yellow_ef">#EFAE51</color>
 
 </resources>

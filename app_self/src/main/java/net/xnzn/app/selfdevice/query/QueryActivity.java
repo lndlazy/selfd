@@ -1,5 +1,6 @@
 package net.xnzn.app.selfdevice.query;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -141,6 +142,7 @@ public class QueryActivity extends SelfCommonActivity implements QueryView {
         @Override
         public void onPageSelected(int position) {
             fragment_Detail.setVisibility(View.GONE);
+            viewPager2.setVisibility(View.VISIBLE);
             L.i("=====onPageSelected=====:" + position);
         }
     };
@@ -166,6 +168,7 @@ public class QueryActivity extends SelfCommonActivity implements QueryView {
      */
     public void orderDetail(int id) {
         fragment_Detail.setVisibility(View.VISIBLE);
+        viewPager2.setVisibility(View.GONE);
 //        orderDetailFragment = new OrderDetailFragment(id);
         //viewPager2.setCurrentItem(fragments.length - 1);
 
@@ -183,4 +186,8 @@ public class QueryActivity extends SelfCommonActivity implements QueryView {
 
     }
 
+    @Override
+    public Context getMyAppContext() {
+        return getApplicationContext();
+    }
 }

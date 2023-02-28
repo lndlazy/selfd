@@ -71,6 +71,7 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
 
 //        if (in_time_title != null)
 //            in_time_title.setVisibility(showTimeTitle() ? View.VISIBLE : View.GONE);
+        tvCount.setText("");
 
         ivBack.setOnClickListener(view -> finish());
         tvBack.setOnClickListener(view -> finish());

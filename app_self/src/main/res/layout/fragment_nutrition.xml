@@ -1,107 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/page_bg_gray"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    tools:ignore="ResourceName">
 
-    <View
-        android:id="@+id/v1"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_gray_line"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <View
-        android:id="@+id/v2"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="30dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="营养分析"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            tools:text="10s" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shape_white_bg_cir">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_33"
+                    android:textSize="30sp"
+                    tools:text="张三" />
+
+                <TextView
+                    android:id="@+id/tv_dept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_999"
+                    android:textSize="16sp"
+                    tools:text="年龄：30 部门：研发部" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/shape_circle_white"
+            android:padding="10dp" />
+
+
+        <!--        <RelativeLayout-->
+        <!--            android:layout_width="200dp"-->
+        <!--            android:layout_height="200dp"-->
+        <!--            android:background="@drawable/shape_circle_white">-->
+
+        <!--            <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--                android:id="@+id/iv_head"-->
+        <!--                android:layout_width="180dp"-->
+        <!--                android:layout_height="180dp"-->
+        <!--                android:layout_centerInParent="true"-->
+        <!--                android:layout_centerVertical="true" />-->
+
+        <!--        </RelativeLayout>-->
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
         android:background="@drawable/shape_white_bg_cir"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/v1" />
-
-    <!--    标题-->
-
-    <ImageView
-        android:id="@+id/ivNutritionPic"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:layout_marginLeft="30dp"
-        android:src="@mipmap/ic_head_pic"
-        app:layout_constraintBottom_toBottomOf="@id/v2"
-        app:layout_constraintLeft_toLeftOf="@id/v2"
-        app:layout_constraintTop_toTopOf="@id/v2" />
-
-    <TextView
-        android:id="@+id/tvNutritionName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
-        android:text="张散散"
-        android:textColor="@color/text_color_33"
-        android:textSize="29sp"
-        app:layout_constraintLeft_toRightOf="@id/ivNutritionPic"
-        app:layout_constraintTop_toTopOf="@id/ivNutritionPic" />
-
-    <TextView
-        android:id="@+id/tvDetailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="年龄：20"
-        android:textColor="@color/text_color_666"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="@id/tvNutritionName"
-        app:layout_constraintTop_toBottomOf="@id/tvNutritionName" />
-
-    <TextView
-        android:id="@+id/tvNutritionDepart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:text="部门：电子商务部"
-        android:textColor="@color/text_color_666"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toRightOf="@id/tvDetailAddress"
-        app:layout_constraintTop_toBottomOf="@id/tvNutritionName" />
-
-    <ImageView
-        android:id="@+id/ivNutritionGender"
-        android:layout_width="110dp"
-        app:layout_constraintRight_toRightOf="@id/v2"
-        app:layout_constraintTop_toTopOf="@id/v2"
-        app:layout_constraintBottom_toBottomOf="@id/v2"
-        android:layout_marginRight="20dp"
-        android:src="@mipmap/ic_female"
-        android:layout_height="110dp"/>
-
-<!--    查询的信息    -->
-
-    <View
-        android:layout_width="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/shape_white_bg_cir"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintTop_toBottomOf="@id/v2"
-        android:layout_marginTop="20dp"
-        android:layout_height="650dp"/>
+        android:orientation="vertical">
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
 
-    <TextView
-        android:id="@+id/tvTodayQuery"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="当日查询"
+                android:textColor="@color/color_a31"
+                android:textSize="26dp"
+                android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--                android:background="#F0F0F0"-->
+            <TextView
+                android:id="@+id/tv_week"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/yy_select_bg"
+                android:gravity="center"
+                android:text="当周查询"
+                android:textColor="@color/text_color_33"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="32dp"
+                android:background="#673AB7" />
+
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="摄入营养素"
+                android:textColor="@color/text_color_33"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/tv_personal_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人饮食记录>>"
+                android:textAlignment="@id/tv"
+                android:textColor="@color/color_999"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/public_shape_gray"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_yy_title" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#CCC" />
+
+            <me.jingbin.library.ByRecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+            <!--            tools:listitem="@layout/item_yy"-->
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:padding="32dp">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="32dp"
+                android:background="#673AB7" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="折线图"
+                android:textColor="@color/text_color_33"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/yy_line_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="推荐摄入值/100g"
+                    android:textColor="@color/text_color_33"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/yy_line_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="实际摄入值/100g"
+                    android:textColor="@color/text_color_33"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <net.xnzn.app.selfdevice.widget.LineView
+                android:id="@+id/line_view"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_margin="32dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="*建议 蔬菜水果应多吃，成人每天蔬菜摄入标准至少500g。而且最好能吃5种以上的蔬菜"
+            android:textColor="@color/color_999"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

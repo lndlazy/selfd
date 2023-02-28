@@ -88,7 +88,7 @@ public class MenuShowActivity extends SelfCommonActivity {
         SpacesItemDecoration itemDecoration = new SpacesItemDecoration(this, SpacesItemDecoration.VERTICAL)
 //                .setNoShowDivider(1, 1)
                 // 颜色，分割线间距，左边距(单位dp)，右边距(单位dp)
-                .setParam(R.color.translucent, 10, 0, 0);
+                .setParam(R.color.translucent, 20, 0, 0);
 
         brMenuRecyclerView.addItemDecoration(itemDecoration);
 
@@ -96,7 +96,6 @@ public class MenuShowActivity extends SelfCommonActivity {
     }
 
     private void setTypeAdapter() {
-
 
         List<MenuTypeBean> typeList = new ArrayList<>();
         typeList.add(new MenuTypeBean(1, "推荐"));

@@ -1,32 +1,58 @@
 package net.xnzn.app.selfdevice.query;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import net.xnzn.app.selfdevice.R;
+import net.xnzn.app.selfdevice.ui.BaseFragment;
 
-public class OrderDetailFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+import me.jingbin.library.ByRecyclerView;
+import me.jingbin.library.adapter.BaseByViewHolder;
+import me.jingbin.library.adapter.BaseRecyclerAdapter;
+
+public class OrderDetailFragment extends BaseFragment {
 
 
-    public OrderDetailFragment() {
-    }
+    ByRecyclerView orderRecyclerView;
 
-    public OrderDetailFragment(int contentLayoutId) {
-        super(contentLayoutId);
-    }
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public int getLayoutId() {
+        return R.layout.fragment_order_detail;
+    }
+
+    @Override
+    public void initView(View view) {
+        orderRecyclerView = view.findViewById(R.id.orderRecyclerView);
 
 
-        return inflater.inflate(R.layout.fragment_order_detail, container, false);
+    }
 
+    @Override
+    public void initData() {
+
+        if (getActivity() == null)
+            return;
+
+        BaseRecyclerAdapter<String> adapter = new BaseRecyclerAdapter<String>(R.layout.item_order_comment) {
+
+            @Override
+            protected void bindView(BaseByViewHolder<String> holder, String bean, int position) {
+
+            }
+        };
+        orderRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        orderRecyclerView.setAdapter(adapter);
+
+        List<String> list = new ArrayList<>();
+        list.add("");
+        list.add("");
+        list.add("");
+        adapter.setNewData(list);
     }
 }

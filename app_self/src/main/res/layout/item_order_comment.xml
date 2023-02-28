@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5px">
+
+    <ImageView
+        android:id="@+id/ivImgUrl"
+        android:layout_width="160px"
+        android:layout_height="140px"
+        android:layout_marginLeft="40px"
+        android:src="@mipmap/ic_menu_food_show"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24px"
+        android:text="酸辣大白菜"
+        android:textColor="@color/text_color_33"
+        android:textSize="30px"
+        app:layout_constraintLeft_toRightOf="@id/ivImgUrl"
+        app:layout_constraintTop_toTopOf="@id/ivImgUrl" />
+
+    <TextView
+        android:id="@+id/tvFen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15px"
+        android:text="小份"
+        android:textColor="@color/color_999"
+        android:textSize="23px"
+        app:layout_constraintLeft_toLeftOf="@id/tvItemName"
+        app:layout_constraintTop_toBottomOf="@id/tvItemName" />
+
+    <TextView
+        android:id="@+id/tvItemCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15px"
+        android:text="x1"
+        android:textColor="@color/color_999"
+        android:textSize="23px"
+        app:layout_constraintLeft_toLeftOf="@id/tvFen"
+        app:layout_constraintTop_toBottomOf="@id/tvFen" />
+
+    <TextView
+        android:layout_width="56px"
+        android:layout_height="30px"
+        android:layout_marginLeft="13px"
+        android:background="@drawable/shape_stroke_theme"
+        android:gravity="center"
+        android:text="午餐"
+        android:textColor="@color/theme_color"
+        android:textSize="18px"
+        app:layout_constraintBottom_toBottomOf="@id/tvItemName"
+        app:layout_constraintLeft_toRightOf="@id/tvItemName"
+        app:layout_constraintTop_toTopOf="@id/tvItemName" />
+
+    <TextView
+        android:id="@+id/tvItemPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="45px"
+        android:text="￥20.5"
+        android:textColor="@color/text_color_1a"
+        android:textSize="40px"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivImgUrl" />
+
+
+    <TextView
+        android:id="@+id/tvItemMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12px"
+        android:layout_marginRight="45px"
+        android:text="￥25.5"
+        android:textColor="@color/color_999"
+        android:textSize="25px"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvItemPay" />
+
+    <TextView
+        android:id="@+id/tvItemStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:text="退款成功"
+        android:textColor="@color/color_yellow_ef"
+        android:textSize="25px"
+        app:layout_constraintRight_toRightOf="@id/tvItemPay"
+        app:layout_constraintTop_toBottomOf="@id/tvItemMoney" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

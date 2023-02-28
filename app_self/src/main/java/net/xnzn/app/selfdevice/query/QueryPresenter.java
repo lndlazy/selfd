@@ -3,9 +3,16 @@ package net.xnzn.app.selfdevice.query;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import net.xnzn.app.selfdevice.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.jingbin.library.ByRecyclerView;
+import me.jingbin.library.adapter.BaseByViewHolder;
+import me.jingbin.library.adapter.BaseRecyclerAdapter;
 
 public class QueryPresenter {
 
@@ -40,5 +47,25 @@ public class QueryPresenter {
         TextView tvPayTime = view.findViewById(R.id.tvPayTime);//支付时间
         TextView tvPayType = view.findViewById(R.id.tvPayType);//支付方式
         TextView tvDetailStatus = view.findViewById(R.id.tvDetailStatus);//订单状态
+
+
+        if (queryView.getMyAppContext() == null)
+            return;
+
+        BaseRecyclerAdapter<String> adapter = new BaseRecyclerAdapter<String>(R.layout.item_order_comment) {
+
+            @Override
+            protected void bindView(BaseByViewHolder<String> holder, String bean, int position) {
+
+            }
+        };
+        orderRecyclerView.setLayoutManager(new LinearLayoutManager(queryView.getMyAppContext()));
+        orderRecyclerView.setAdapter(adapter);
+
+        List<String> list = new ArrayList<>();
+        list.add("");
+        list.add("");
+        list.add("");
+        adapter.setNewData(list);
     }
 }

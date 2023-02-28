@@ -18,18 +18,18 @@
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="wrap_content"-->
     <!--        app:layout_constraintTop_toBottomOf="@id/in_title" />-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brDateRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="horizontal"
         android:overScrollMode="never"
@@ -39,7 +39,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="112px"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brDateRecyclerView"
@@ -48,22 +48,23 @@
         app:tabIndicatorFullWidth="false"
         app:tabMaxWidth="0dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/theme_color" />
+        app:tabSelectedTextColor="@color/theme_color"
+        app:tabTextAppearance="@style/TabTextSize" />
 
 
-<!--    <q.rorbin.verticaltablayout.VerticalTabLayout-->
-<!--        android:id="@+id/vtlType"-->
-<!--        android:layout_width="145dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:background="@color/white"-->
-<!--        android:overScrollMode="never"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tab" />-->
+    <!--    <q.rorbin.verticaltablayout.VerticalTabLayout-->
+    <!--        android:id="@+id/vtlType"-->
+    <!--        android:layout_width="145dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:overScrollMode="never"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tab" />-->
 
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brTypeRecyclerView"
-        android:layout_width="145dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@color/white"
         android:overScrollMode="never"
@@ -73,14 +74,14 @@
 
     <me.jingbin.library.ByRecyclerView
         android:id="@+id/brMenuRecyclerView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginLeft="14dp"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="28px"
         android:layout_marginRight="22dp"
         android:overScrollMode="never"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/brTypeRecyclerView"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tab" />
 
 

@@ -1,4 +1,6 @@
 package net.xnzn.app.selfdevice.query;
 
-interface QueryView {
+import net.xnzn.app.selfdevice.ui.BaseView;
+
+public interface QueryView extends BaseView {
 }

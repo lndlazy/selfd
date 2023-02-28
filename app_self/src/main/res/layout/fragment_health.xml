@@ -1,16 +1,574 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF5F5F5"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="健康检测"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/rlOne"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="400px"
+            android:layout_marginLeft="23px"
+            android:layout_marginTop="120px"
+            android:layout_marginRight="23px"
+            android:background="@drawable/shape_white_bg_cir"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40px"
+                android:layout_marginTop="32px"
+                android:text="最近一次数据"
+                android:textColor="#FF1A1A1A"
+                android:textSize="30px"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FF775EEB"
+                        android:textSize="46px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="身高(cm)"
+                        android:textColor="#FF666666"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="50px"
+                    android:layout_gravity="center_vertical"
+                    android:background="#FFCCCCCC" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FF775EEB"
+                        android:textSize="46px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="体重(kg)"
+                        android:textColor="#FF666666"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="50px"
+                    android:layout_gravity="center_vertical"
+                    android:background="#FFCCCCCC" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvBMI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FF775EEB"
+                        android:textSize="46px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BMI"
+                        android:textColor="#FF666666"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvShape"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="标准"
+                        android:textColor="#FF775EEB"
+                        android:textSize="35px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8px"
+                        android:text="体型"
+                        android:textColor="#FF666666"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="50px"
+                    android:layout_gravity="center_vertical"
+                    android:background="#FFCCCCCC" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvBlood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/0"
+                        android:textColor="#FF775EEB"
+                        android:textSize="46px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="血压(mmHg)"
+                        android:textColor="#FF666666"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3px"
+                    android:layout_height="50px"
+                    android:layout_gravity="center_vertical"
+                    android:background="#FFCCCCCC" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvHeartRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FF775EEB"
+                        android:textSize="46px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="心率(次/分)"
+                        android:textColor="#FF666666"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll"
+            android:layout_marginLeft="23px"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="23px"
+            android:layout_marginBottom="50px"
+            android:background="@drawable/shape_white_bg_cir"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:padding="35px"
+                    android:text="上传记录"
+                    android:textColor="#FF1A1A1A"
+                    android:textSize="30px"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tvMon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawableRight="@mipmap/ic_down2"
+                    android:gravity="center"
+                    android:padding="35px"
+                    android:text="12月"
+                    android:textColor="#FF1A1A1A"
+                    android:textSize="30px"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <me.jingbin.library.ByRecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10px"
+                android:paddingLeft="45px"
+                android:paddingRight="45px"
+                tools:listitem="@layout/item_health" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110px"
+            android:background="@mipmap/ic_health_bg1">
+
+            <TextView
+                android:id="@+id/tvBack1"
+                android:layout_width="150px"
+                android:layout_height="80px"
+                android:layout_marginLeft="25px"
+                android:layout_marginTop="20px"
+                android:drawableLeft="@mipmap/backfirstpage"
+                android:drawablePadding="5px"
+                android:gravity="center_vertical"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="25px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35px"
+                android:text="健康详情"
+                android:textColor="@color/white"
+                android:textSize="40px" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="105px"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="420px"
+                    android:layout_height="440px"
+                    android:background="@drawable/shape_white_bg_cir"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:src="@mipmap/sg" />
+
+                    <TextView
+                        android:id="@+id/tvHeight2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15px"
+                        android:text="0"
+                        android:textColor="#ff000000"
+                        android:textSize="40px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="身高(cm)"
+                        android:textColor="#ff000000"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="40px"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="420px"
+                    android:layout_height="440px"
+                    android:background="@drawable/shape_white_bg_cir"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:src="@mipmap/tz" />
+
+                    <TextView
+                        android:id="@+id/tvWeight2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15px"
+                        android:text="0"
+                        android:textColor="#ff000000"
+                        android:textSize="40px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="体重(kg)"
+                        android:textColor="#ff000000"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50px" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="420px"
+                    android:layout_height="440px"
+                    android:background="@drawable/shape_white_bg_cir"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:src="@mipmap/bmi" />
+
+                    <TextView
+                        android:id="@+id/tvBMI2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15px"
+                        android:text="0"
+                        android:textColor="#ff000000"
+                        android:textSize="40px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BMI"
+                        android:textColor="#ff000000"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="40px"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="420px"
+                    android:layout_height="440px"
+                    android:background="@drawable/shape_white_bg_cir"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:src="@mipmap/tx" />
+
+                    <TextView
+                        android:id="@+id/tvShape2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15px"
+                        android:text="标准"
+                        android:textColor="#ff000000"
+                        android:textSize="35px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="体型"
+                        android:textColor="#ff000000"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50px" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="420px"
+                    android:layout_height="440px"
+                    android:background="@drawable/shape_white_bg_cir"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:src="@mipmap/xy" />
+
+                    <TextView
+                        android:id="@+id/tvBlood2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15px"
+                        android:text="0/0"
+                        android:textColor="#ff000000"
+                        android:textSize="40px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="血压(mmHg)"
+                        android:textColor="#ff000000"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="40px"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="420px"
+                    android:layout_height="440px"
+                    android:background="@drawable/shape_white_bg_cir"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="160px"
+                        android:layout_height="160px"
+                        android:src="@mipmap/xl" />
+
+                    <TextView
+                        android:id="@+id/tvHeartRate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15px"
+                        android:text="0"
+                        android:textColor="#ff000000"
+                        android:textSize="40px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="心率(次/分)"
+                        android:textColor="#ff000000"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

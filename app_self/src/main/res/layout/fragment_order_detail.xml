@@ -13,7 +13,7 @@
         <View
             android:id="@+id/v1"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:background="@color/color_gray_line"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -22,10 +22,10 @@
         <View
             android:id="@+id/v2"
             android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="30dp"
+            android:layout_height="168px"
+            android:layout_marginLeft="@dimen/margin_40px"
+            android:layout_marginTop="31px"
+            android:layout_marginRight="40px"
             android:background="@drawable/shape_white_bg_cir"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -35,11 +35,11 @@
             android:id="@+id/tvDetailName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="41px"
+            android:layout_marginTop="42px"
             android:text="张散散"
             android:textColor="@color/text_color_1a"
-            android:textSize="23sp"
+            android:textSize="40px"
             app:layout_constraintLeft_toLeftOf="@id/v2"
             app:layout_constraintTop_toTopOf="@id/v2" />
 
@@ -47,10 +47,10 @@
             android:id="@+id/tvTel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="40px"
             android:text="15688888888"
             android:textColor="@color/text_color_1a"
-            android:textSize="23sp"
+            android:textSize="40px"
             app:layout_constraintBottom_toBottomOf="@id/tvDetailName"
             app:layout_constraintLeft_toRightOf="@id/tvDetailName"
             app:layout_constraintTop_toTopOf="@id/tvDetailName" />
@@ -59,10 +59,10 @@
             android:id="@+id/tvDetailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="23px"
             android:text="江苏南京江北新区丽景路2号软件园研发大厦8楼"
             android:textColor="@color/color_999"
-            android:textSize="18sp"
+            android:textSize="30px"
             app:layout_constraintLeft_toLeftOf="@id/tvDetailName"
             app:layout_constraintTop_toBottomOf="@id/tvDetailName" />
 
@@ -73,10 +73,10 @@
             android:id="@+id/v3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="@dimen/margin_40px"
+            android:layout_marginTop="20px"
+            android:layout_marginRight="@dimen/margin_40px"
+            android:layout_marginBottom="20px"
             android:background="@drawable/shape_white_bg_cir"
             app:layout_constraintBottom_toTopOf="@id/v5"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -88,23 +88,22 @@
             android:id="@+id/tvDetailType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginLeft="42px"
+            android:layout_marginTop="40px"
             android:text="订单类型：自助餐"
             android:textColor="@color/text_color_666"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:textSize="32px"
+            app:layout_constraintLeft_toLeftOf="@id/v2"
             app:layout_constraintTop_toBottomOf="@id/v2" />
 
         <TextView
             android:id="@+id/tvDetailDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="34px"
             android:text="就餐日期：2020-02-22"
             android:textColor="@color/text_color_666"
-            android:textSize="18sp"
+            android:textSize="32px"
             app:layout_constraintBottom_toBottomOf="@id/tvDetailType"
             app:layout_constraintRight_toRightOf="@id/v2"
             app:layout_constraintTop_toTopOf="@id/tvDetailType" />
@@ -112,9 +111,8 @@
         <View
             android:id="@+id/v4"
             android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="1px"
+            android:layout_marginTop="30px"
             android:background="@color/color_gray_line"
             app:layout_constraintLeft_toLeftOf="@id/tvDetailType"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
@@ -124,10 +122,10 @@
             android:id="@+id/tvOrderName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30px"
             android:text="大堂食堂/档口1"
             android:textColor="@color/text_color_1a"
-            android:textSize="20sp"
+            android:textSize="36px"
             app:layout_constraintLeft_toLeftOf="@id/v4"
             app:layout_constraintTop_toBottomOf="@id/v4" />
 
@@ -136,9 +134,9 @@
             android:id="@+id/orderRecyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:minHeight="100dp"
+            android:layout_marginTop="30px"
+            android:layout_marginBottom="30px"
+            android:minHeight="150px"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toBottomOf="@id/tvOrderName" />
@@ -147,10 +145,10 @@
             android:id="@+id/t1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10px"
             android:text="订单金额"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/orderRecyclerView" />
 
@@ -158,10 +156,10 @@
             android:id="@+id/t2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="配送费"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t1" />
 
@@ -169,10 +167,10 @@
             android:id="@+id/t3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="包装费"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t2" />
 
@@ -180,10 +178,10 @@
             android:id="@+id/t4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="餐券"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t3" />
 
@@ -191,10 +189,10 @@
             android:id="@+id/t5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="实付金额"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t4" />
 
@@ -204,7 +202,7 @@
             android:layout_height="wrap_content"
             android:text="￥21.00"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t1" />
 
@@ -214,7 +212,7 @@
             android:layout_height="wrap_content"
             android:text="￥3.00"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t2" />
 
@@ -224,7 +222,7 @@
             android:layout_height="wrap_content"
             android:text="￥0.00"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t3" />
 
@@ -235,7 +233,7 @@
             android:layout_height="wrap_content"
             android:text="￥5.00"
             android:textColor="@color/text_color_ef"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t4" />
 
@@ -245,20 +243,19 @@
             android:layout_height="wrap_content"
             android:text="￥16.00"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t5" />
 
         <!--   xxxxxxxxxxxxx    配送信息    xxxxxxxxxxxxx -->
 
-
         <View
             android:id="@+id/v5"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="30dp"
+            android:layout_height="345px"
+            android:layout_marginLeft="@dimen/margin_40px"
+            android:layout_marginTop="50px"
+            android:layout_marginRight="@dimen/margin_40px"
             android:background="@drawable/shape_white_bg_cir"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -268,10 +265,10 @@
             android:id="@+id/t6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="46px"
             android:text="配送方式"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toTopOf="@id/v5" />
 
@@ -279,34 +276,32 @@
             android:id="@+id/t7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="收货人姓名"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t6" />
-
 
         <TextView
             android:id="@+id/t8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="收货人手机号"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t7" />
-
 
         <TextView
             android:id="@+id/t9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="备注"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t8" />
 
@@ -314,13 +309,11 @@
             android:id="@+id/tvSendStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:text="商家配送"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
-            app:layout_constraintTop_toTopOf="@id/v5" />
-
+            app:layout_constraintTop_toTopOf="@id/t6" />
 
         <TextView
             android:id="@+id/tvUserName"
@@ -328,7 +321,7 @@
             android:layout_height="wrap_content"
             android:text="张三"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t7" />
 
@@ -338,7 +331,7 @@
             android:layout_height="wrap_content"
             android:text="18788888888"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t8" />
 
@@ -348,21 +341,19 @@
             android:layout_height="wrap_content"
             android:text="多点饭，浇点汤汁"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t9" />
 
-
         <!--   xxxxxxxxxxxxx    订单信息    xxxxxxxxxxxxx -->
-
 
         <View
             android:id="@+id/v6"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
+            android:layout_height="330px"
+            android:layout_marginLeft="@dimen/margin_40px"
+            android:layout_marginTop="@dimen/margin_20px"
+            android:layout_marginRight="@dimen/margin_40px"
             android:background="@drawable/shape_white_bg_cir"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -372,22 +363,21 @@
             android:id="@+id/t10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="订单编号"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toTopOf="@id/v6" />
-
 
         <TextView
             android:id="@+id/t11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="创建时间"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t10" />
 
@@ -396,10 +386,10 @@
             android:id="@+id/t12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="支付时间"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t11" />
 
@@ -407,10 +397,10 @@
             android:id="@+id/t13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20px"
             android:text="支付方式"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintLeft_toLeftOf="@id/tvOrderName"
             app:layout_constraintTop_toBottomOf="@id/t12" />
 
@@ -420,7 +410,7 @@
             android:layout_height="wrap_content"
             android:text="1425678956789"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t10" />
 
@@ -430,7 +420,7 @@
             android:layout_height="wrap_content"
             android:text="2022-03-23 12:44:23"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t11" />
 
@@ -440,7 +430,7 @@
             android:layout_height="wrap_content"
             android:text="2022-03-23 12:44:23"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t12" />
 
@@ -450,42 +440,41 @@
             android:layout_height="wrap_content"
             android:text="账户支付"
             android:textColor="@color/text_color_33"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_32"
             app:layout_constraintRight_toRightOf="@id/tvDetailDate"
             app:layout_constraintTop_toTopOf="@id/t13" />
 
         <View
             android:id="@+id/v7"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginTop="45dp"
+            android:layout_height="110px"
+            android:layout_marginTop="77px"
             android:background="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/v6" />
-
 
         <TextView
             android:id="@+id/tvDetailStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="42px"
             android:text="订单状态：已完成"
             android:textColor="@color/text_color_33"
-            android:textSize="20sp"
+            android:textSize="32px"
             app:layout_constraintBottom_toBottomOf="@id/v7"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/v7" />
 
         <TextView
             android:id="@+id/tvDetailComment"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="30dp"
+            android:layout_width="180px"
+            android:layout_height="66px"
+            android:layout_marginRight="40px"
             android:background="@drawable/shape_theme_color_login"
             android:gravity="center"
             android:text="评价"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="30px"
             app:layout_constraintBottom_toBottomOf="@id/v7"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/v7" />
