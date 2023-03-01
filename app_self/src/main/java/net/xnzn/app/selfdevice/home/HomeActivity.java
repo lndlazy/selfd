@@ -15,8 +15,10 @@ import net.xnzn.app.selfdevice.UserInfo;
 import net.xnzn.app.selfdevice.charge.ChargeActivity;
 import net.xnzn.app.selfdevice.login.LoginActivity;
 import net.xnzn.app.selfdevice.menu.MenuChooseActivity;
+import net.xnzn.app.selfdevice.my.PersonalActivity;
 import net.xnzn.app.selfdevice.query.QueryActivity;
 import net.xnzn.app.selfdevice.setting.SettingActivity;
+import net.xnzn.app.selfdevice.sign.SignActivity;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
 import net.xnzn.app.selfdevice.utils.DateHelper;
 import net.xnzn.lib_commin_ui.CommonDialog;
@@ -147,6 +149,12 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
                         break;
                     case 2:
                         startActivity(QueryActivity.class);
+                        break;
+                    case 3:
+                        startActivity(PersonalActivity.class);
+                        break;
+                    case 4:
+                        startActivity(SignActivity.class);
                         break;
 
                 }

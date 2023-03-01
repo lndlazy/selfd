@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="460px"
+        android:layout_marginLeft="@dimen/margin_40px"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="@dimen/margin_40px"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <net.xnzn.app.selfdevice.widget.CustomItemMiddleEditView
+        android:id="@+id/cmdPwdBefore"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/my_item_height"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v1"
+        app:layout_constraintTop_toTopOf="@id/v1"
+        app:mMiddleEditLeftText="原密码"
+        app:mMiddleEditRightHint="请输入原密码" />
+
+    <include
+        android:id="@+id/i1"
+        layout="@layout/layout_line"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        app:layout_constraintTop_toBottomOf="@id/cmdPwdBefore" />
+
+    <net.xnzn.app.selfdevice.widget.CustomItemMiddleEditView
+        android:id="@+id/cmdNewPwd"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/my_item_height"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/i1"
+        app:mMiddleEditLeftText="新密码"
+        app:mMiddleEditRightHint="请输入新密码" />
+
+    <include
+        android:id="@+id/i2"
+        layout="@layout/layout_line"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        app:layout_constraintTop_toBottomOf="@id/cmdNewPwd" />
+
+    <net.xnzn.app.selfdevice.widget.CustomItemMiddleEditView
+        android:id="@+id/cmdNewPwdRepet"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/my_item_height"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/i2"
+        app:mMiddleEditLeftText="确认密码"
+        app:mMiddleEditRightHint="再次输入新密码" />
+
+    <include
+        android:id="@+id/i3"
+        layout="@layout/layout_line"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        app:layout_constraintTop_toBottomOf="@id/cmdNewPwdRepet" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18px"
+        android:text="*密码必须以8位大小写字母、数字、字符组合"
+        android:textSize="23px"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvModify"
+        android:layout_width="850px"
+        android:layout_height="110px"
+        android:layout_marginTop="167px"
+        android:layout_marginBottom="180px"
+        android:background="@drawable/shape_theme_color_login"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="35px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

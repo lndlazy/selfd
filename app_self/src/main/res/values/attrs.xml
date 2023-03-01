@@ -6,4 +6,30 @@
         <attr name="starNumber" format="integer" />
     </declare-styleable>
 
+
+    <declare-styleable name="CustomMyItemView">
+        <attr name="myLeftText" format="string" />
+        <attr name="myRightText" format="string" />
+        <attr name="myLeftTextColor" format="reference" />
+        <attr name="myRightTextColor" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomMyItemEditView">
+        <attr name="myEditLeftText" format="string" />
+        <attr name="myEditRightText" format="string" />
+        <attr name="myEditLeftTextColor" format="reference" />
+        <attr name="myEditRightTextColor" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomItemMiddleEditView">
+        <attr name="mMiddleEditLeftText" format="string" />
+        <attr name="mMiddleEditRightText" format="string" />
+        <attr name="mMiddleEditLeftTextColor" format="reference" />
+        <attr name="mMiddleEditRightTextColor" format="reference" />
+        <attr name="mMiddleEditRightHint" format="string" />
+    </declare-styleable>
+
+
 </resources>

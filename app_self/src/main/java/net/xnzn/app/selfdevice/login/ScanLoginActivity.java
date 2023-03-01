@@ -5,10 +5,8 @@ import android.Manifest;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
-import net.xnzn.lib_commin_ui.base.constant.Constant;
 
 import android_serialport_api.SerialPortUtil;
-import qr.UsbPrinter;
 
 
 public class ScanLoginActivity extends SelfCommonActivity {

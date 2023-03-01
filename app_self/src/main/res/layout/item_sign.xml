@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingBottom="20dp">
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvType"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="38px"-->
+    <!--        android:layout_marginTop="44px"-->
+    <!--        android:text="订单类型:自助餐"-->
+    <!--        android:textColor="@color/text_color_666"-->
+    <!--        android:textSize="30px"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvDate"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginRight="40px"-->
+    <!--        android:text="就餐日期：2020-02-22"-->
+    <!--        android:textColor="@color/text_color_666"-->
+    <!--        android:textSize="30px"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/tvType"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/tvType" />-->
+
+    <!--    <View-->
+    <!--        android:id="@+id/v1"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="1px"-->
+    <!--        android:layout_marginLeft="38px"-->
+    <!--        android:layout_marginTop="15px"-->
+    <!--        android:layout_marginRight="38px"-->
+    <!--        android:background="@color/color_e6"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvType" />-->
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38px"
+        android:layout_marginTop="32px"
+        android:text="展厅食堂/档口1"
+        android:textColor="@color/text_color_33"
+        android:textSize="36px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="56px"
+        android:layout_height="30px"
+        android:layout_marginLeft="15px"
+        android:background="@drawable/shape_stroke_theme"
+        android:gravity="center"
+        android:text="午餐"
+        android:textColor="@color/theme_color"
+        android:textSize="18px"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintLeft_toRightOf="@id/tvTitle"
+        app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40px"
+        android:text="2020-02-22"
+        android:textColor="@color/text_color_666"
+        android:textSize="30px"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="0px"
+        android:layout_height="1px"
+        android:layout_marginTop="25px"
+        android:background="@color/line"
+        app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+        app:layout_constraintRight_toRightOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <me.jingbin.library.ByRecyclerView
+        android:id="@+id/itemPicRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="300px"
+        android:minHeight="170px"
+        android:overScrollMode="never"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86px"
+        android:text="￥12.9"
+        android:textColor="@color/black"
+        android:textSize="42px"
+        app:layout_constraintRight_toRightOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/v1" />
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12px"
+        android:text="共3件"
+        android:textSize="26px"
+        app:layout_constraintRight_toRightOf="@id/tvPrice"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+    <TextView
+        android:id="@+id/tvSign"
+        android:layout_width="180px"
+        android:layout_height="66px"
+        android:layout_marginTop="46px"
+        android:background="@drawable/shape_theme_color_login"
+        android:gravity="center"
+        android:text="签到"
+        android:textColor="@color/white"
+        android:textSize="30px"
+        app:layout_constraintRight_toRightOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/itemPicRecyclerView" />
+
+    <TextView
+        android:id="@+id/tvMenuDetail"
+        android:layout_width="180px"
+        android:layout_height="66px"
+        android:layout_marginRight="20px"
+        android:background="@drawable/shape_login_out_cancel"
+        android:gravity="center"
+        android:text="菜品详情"
+        android:textColor="@color/theme_color"
+        android:textSize="30px"
+        app:layout_constraintRight_toLeftOf="@id/tvSign"
+        app:layout_constraintTop_toTopOf="@id/tvSign" />
+
+    <TextView
+        android:id="@+id/tvFoodCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取餐码: 003"
+        android:textColor="@color/text_color_1a"
+        android:textSize="30px"
+        app:layout_constraintBottom_toBottomOf="@id/tvSign"
+        app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+        app:layout_constraintTop_toTopOf="@id/tvSign" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

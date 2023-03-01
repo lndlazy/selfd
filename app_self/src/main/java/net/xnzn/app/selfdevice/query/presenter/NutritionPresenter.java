@@ -4,7 +4,6 @@ import net.xnzn.app.selfdevice.query.bean.YingYangRequest;
 import net.xnzn.app.selfdevice.query.view.NutritionView;
 import net.xnzn.leniu_http.yunshitang.model.YunContent;
 
-import io.reactivex.schedulers.Schedulers;
 
 public class NutritionPresenter {
 

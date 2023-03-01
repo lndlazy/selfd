@@ -30,7 +30,7 @@ public class PersonalActivity extends SelfCommonActivity {
 
     protected FragmentStateAdapter fragmentStateAdapter;
     //    protected OrderDetailFragment orderDetailFragment;
-    private FrameLayout fragment_Detail;
+//    private FrameLayout fragment_Detail;
 
     @Override
     protected void initView() {
@@ -38,7 +38,8 @@ public class PersonalActivity extends SelfCommonActivity {
 
         viewPager2 = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tab_layout);
-        fragment_Detail = findViewById(R.id.fragment_Detail);
+//        fragment_Detail = findViewById(R.id.fragment_Detail);
+        tvBarContent.setText("首页> 个人信息");
 
         //去除边界阴影
         View childAt = viewPager2.getChildAt(0);
@@ -59,14 +60,13 @@ public class PersonalActivity extends SelfCommonActivity {
 
     @Override
     protected boolean showBar() {
-        return false;
+        return true;
     }
 
     @Override
     protected int showView() {
         return R.layout.activity_personal;
     }
-
 
     private TabLayoutMediator mediator;
 
@@ -140,9 +140,9 @@ public class PersonalActivity extends SelfCommonActivity {
 
         @Override
         public void onPageSelected(int position) {
-            fragment_Detail.setVisibility(View.GONE);
-            viewPager2.setVisibility(View.VISIBLE);
-            L.i("=====onPageSelected=====:" + position);
+//            fragment_Detail.setVisibility(View.GONE);
+//            viewPager2.setVisibility(View.VISIBLE);
+//            L.i("=====onPageSelected=====:" + position);
         }
     };
 

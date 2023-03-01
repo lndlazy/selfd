@@ -34,5 +34,6 @@
     <color name="text_color_ef">#EF2828</color>
     <color name="color_a31">#A31FC0</color>
     <color name="color_yellow_ef">#EFAE51</color>
+    <color name="text_color_ccc">#CCCCCC</color>
 
 </resources>

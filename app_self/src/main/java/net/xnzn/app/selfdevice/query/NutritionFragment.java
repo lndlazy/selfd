@@ -24,7 +24,6 @@ import net.xnzn.app.selfdevice.widget.LineView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.adapter.BaseByViewHolder;
 import me.jingbin.library.adapter.BaseRecyclerAdapter;

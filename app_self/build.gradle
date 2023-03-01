@@ -118,9 +118,9 @@ dependencies {
 //    implementation "com.squareup.okio:okio:3.3.0"
 
 
-    implementation 'me.jessyan:arms:2.5.2'
+//    implementation 'me.jessyan:arms:2.5.2'
     //想使用 Glide 请依赖 arms-imageloader-glide 扩展库, 使用方式请看 #4.1
-    implementation 'me.jessyan:arms-imageloader-glide:2.5.2'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1' //Butterknife 插件, 很多人因为没加这个而报错, 切记!!!
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.26'//依赖插件
+//    implementation 'me.jessyan:arms-imageloader-glide:2.5.2'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1' //Butterknife 插件, 很多人因为没加这个而报错, 切记!!!
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.26'//依赖插件
 }

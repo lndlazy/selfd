@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/page_bg_gray"
     android:overScrollMode="never">
 
@@ -13,19 +13,19 @@
         <View
             android:id="@+id/v1"
             android:layout_width="match_parent"
-            android:layout_height="1750px"
+            android:layout_height="2450px"
             android:layout_marginTop="30px"
             android:background="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <net.xnzn.app.selfdevice.widget.CustomMyItemEditView
-            android:id="@+id/cmiName"
+            android:id="@+id/cmiHealthHeight"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/v1"
-            app:myEditLeftText="姓名" />
+            app:myEditLeftText="身高" />
 
 
         <include
@@ -33,16 +33,16 @@
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiName" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthHeight" />
 
 
         <net.xnzn.app.selfdevice.widget.CustomMyItemEditView
-            android:id="@+id/cmiTel"
+            android:id="@+id/cmiHealthWeight"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i1"
-            app:myEditLeftText="手机号" />
+            app:myEditLeftText="体重" />
 
 
         <include
@@ -50,63 +50,65 @@
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiTel" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthWeight" />
 
 
-        <net.xnzn.app.selfdevice.widget.CustomMyItemView
-            android:id="@+id/cmiGender"
+        <net.xnzn.app.selfdevice.widget.CustomMyItemEditView
+            android:id="@+id/cmiHealthAge"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i2"
-            app:myLeftText="性别" />
+            app:myEditLeftText="年龄" />
 
         <include
             android:id="@+id/i3"
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiGender" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthAge" />
 
         <net.xnzn.app.selfdevice.widget.CustomMyItemView
-            android:id="@+id/cmiBirthday"
+            android:id="@+id/cmiHealthBMI"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i3"
-            app:myLeftText="出生年月" />
+            app:myLeftText="BMI"
+            app:myRightText=" " />
 
         <include
             android:id="@+id/i4"
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiBirthday" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthBMI" />
 
-
-        <net.xnzn.app.selfdevice.widget.CustomMyItemEditView
-            android:id="@+id/cmiIdCard"
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiHealthBody"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i4"
-            app:myEditLeftText="身份证号码" />
+            app:myLeftText="体型"
+            app:myRightText=" " />
 
         <include
             android:id="@+id/i5"
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiIdCard" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthBody" />
 
 
-        <net.xnzn.app.selfdevice.widget.CustomMyItemEditView
-            android:id="@+id/cmiEmail"
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiHealthHeart"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i5"
-            app:myEditLeftText="邮箱" />
+            app:myLeftText="心率"
+            app:myRightText=" " />
 
 
         <include
@@ -114,53 +116,134 @@
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiEmail" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthHeart" />
 
-        <net.xnzn.app.selfdevice.widget.CustomMyItemEditView
-            android:id="@+id/cmiAddress"
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiHealthBlood"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i6"
-            app:myEditLeftText="家庭住址" />
-
+            app:myLeftText="血压"
+            app:myRightText=" " />
 
         <include
             android:id="@+id/i7"
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiAddress" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthBlood" />
 
         <net.xnzn.app.selfdevice.widget.CustomMyItemView
-            android:id="@+id/cmiDoctorSay"
+            android:id="@+id/cmiHealthWork"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i7"
-            app:myLeftText="医嘱" />
+            app:myLeftText="劳动强度" />
 
         <include
             android:id="@+id/i8"
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiDoctorSay" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHealthWork" />
 
         <net.xnzn.app.selfdevice.widget.CustomMyItemView
-            android:id="@+id/cmiHeight"
+            android:id="@+id/cmiHospital"
             android:layout_width="match_parent"
             android:layout_height="@dimen/my_item_height"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i8"
-            app:myLeftText="体重控制" />
+            app:myLeftText="是否住院" />
 
         <include
             android:id="@+id/i9"
             layout="@layout/layout_line"
             android:layout_width="wrap_content"
             android:layout_height="1px"
-            app:layout_constraintTop_toBottomOf="@id/cmiHeight" />
+            app:layout_constraintTop_toBottomOf="@id/cmiHospital" />
+
+
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiHospitalDate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_item_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i9"
+            app:myLeftText="住院日期" />
+
+        <include
+            android:id="@+id/i10"
+            layout="@layout/layout_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            app:layout_constraintTop_toBottomOf="@id/cmiHospitalDate" />
+
+
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiPregnant"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_item_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i10"
+            app:myLeftText="是否怀孕" />
+
+        <include
+            android:id="@+id/i11"
+            layout="@layout/layout_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            app:layout_constraintTop_toBottomOf="@id/cmiPregnant" />
+
+
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiPregnantDate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_item_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i11"
+            app:myLeftText="怀孕日期" />
+
+        <include
+            android:id="@+id/i12"
+            layout="@layout/layout_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            app:layout_constraintTop_toBottomOf="@id/cmiPregnantDate" />
+
+
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiGuoMing"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_item_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i12"
+            app:myLeftText="过敏源" />
+
+        <include
+            android:id="@+id/i13"
+            layout="@layout/layout_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            app:layout_constraintTop_toBottomOf="@id/cmiGuoMing" />
+
+
+        <net.xnzn.app.selfdevice.widget.CustomMyItemView
+            android:id="@+id/cmiSlowSick"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_item_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i13"
+            app:myLeftText="慢性病" />
+
+        <include
+            android:id="@+id/i14"
+            layout="@layout/layout_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            app:layout_constraintTop_toBottomOf="@id/cmiSlowSick" />
+
 
         <TextView
             android:id="@+id/tvSaveNow"
@@ -183,7 +266,7 @@
         <!--        app:layout_constraintTop_toBottomOf="@id/cmiName"-->
         <!--        app:layout_constraintLeft_toLeftOf="parent"-->
         <!--        app:layout_constraintRight_toRightOf="parent"/>-->
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>
