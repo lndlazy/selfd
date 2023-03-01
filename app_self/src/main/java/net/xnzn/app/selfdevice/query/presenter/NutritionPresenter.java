@@ -2,7 +2,6 @@ package net.xnzn.app.selfdevice.query.presenter;
 
 import net.xnzn.app.selfdevice.query.bean.YingYangRequest;
 import net.xnzn.app.selfdevice.query.view.NutritionView;
-import net.xnzn.leniu_http.yunshitang.model.YunContent;
 
 
 public class NutritionPresenter {
@@ -18,7 +17,7 @@ public class NutritionPresenter {
         request.setAnalyseScope(dayOrWeek);
         request.setCustId(custId);
 
-        YunContent yunContent = new YunContent(request);
+//        YunContent yunContent = new YunContent(request);
 //        mModel.queryYingYangData(yunContent)
 //                .subscribeOn(Schedulers.io())
 ////                .retryWhen(new RetryWithDelay(3, 3))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔

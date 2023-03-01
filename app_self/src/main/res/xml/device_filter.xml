@@ -36,4 +36,28 @@
         product-id="1412"
         vendor-id="6997" />
 
+    <usb-device
+        product-id="5529"
+        vendor-id="5512" />
+
+    <usb-device
+        product-id="22304"
+        vendor-id="1155" />
+
+
+    <usb-device
+        product-id="1"
+        vendor-id="8746" />
+
+
+    <usb-device
+        product-id="13624"
+        vendor-id="19267" />
+
+
+    <usb-device
+        product-id="20763"
+        vendor-id="1306" />
+
+
 </usb>

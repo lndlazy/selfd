@@ -156,6 +156,7 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
             case R.id.ivScan://切换扫码登录
                 startActivity(ScanLoginActivity.class);
+                finish();
                 break;
 
         }

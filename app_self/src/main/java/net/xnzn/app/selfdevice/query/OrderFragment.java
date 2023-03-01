@@ -28,7 +28,6 @@ import java.util.List;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.adapter.BaseByViewHolder;
 import me.jingbin.library.adapter.BaseRecyclerAdapter;
-import rxhttp.wrapper.utils.LogUtil;
 
 public class OrderFragment extends Fragment implements View.OnClickListener {
 

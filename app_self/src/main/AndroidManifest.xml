@@ -57,10 +57,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SelfDevice">
 
-<!--        &lt;!&ndash;arms 配置&ndash;&gt;-->
-<!--        <meta-data-->
-<!--            android:name="me.jessyan.mvparms.demo.app.GlobalConfiguration"-->
-<!--            android:value="ConfigModule" />-->
+        <!--        &lt;!&ndash;arms 配置&ndash;&gt;-->
+        <!--        <meta-data-->
+        <!--            android:name="me.jessyan.mvparms.demo.app.GlobalConfiguration"-->
+        <!--            android:value="ConfigModule" />-->
 
         <activity
             android:name=".home.HomeActivity"
@@ -88,14 +88,16 @@
             android:name=".login.ScanLoginActivity"
             android:exported="true">
 
+            <!-- USB -->
             <intent-filter>
-                <!-- 声明需要接收USB连接事件 -->
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
 
             <meta-data
                 android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                 android:resource="@xml/device_filter" />
+            <!-- USB END -->
+
         </activity>
         <activity android:name=".my.PersonalActivity" />
         <activity android:name=".sign.SignActivity" />
