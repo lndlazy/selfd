@@ -8,14 +8,34 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebSettings;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.GsonBuilder;
+
 import net.xnzn.app.selfdevice.R;
+import net.xnzn.app.selfdevice.UserInfo;
+import net.xnzn.app.selfdevice.charge.ChargeActivity;
+import net.xnzn.app.selfdevice.login.bean.request.LoginUserResp;
+import net.xnzn.app.selfdevice.login.bean.request.UserLoginRequest;
+import net.xnzn.app.selfdevice.my.PersonalActivity;
+import net.xnzn.app.selfdevice.net.SelfApiService;
+import net.xnzn.app.selfdevice.query.QueryActivity;
+import net.xnzn.app.selfdevice.sign.SignActivity;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+
+import net.xnzn.app.selfdevice.utils.NextPageConstant;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
+import net.xnzn.leniu_http.util.AesUtil;
+import net.xnzn.lib_http.yunshitang.YstResponse;
+import net.xnzn.lib_http.yunshitang.util.SignUtil;
 import net.xnzn.lib_log.L;
 import net.xnzn.lib_utils.ToastUtil;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+
 
 public class LoginActivity extends SelfCommonActivity implements View.OnClickListener {
 
@@ -28,6 +48,7 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
     private static final int LOGIN_TYPE_PWD = 0;
     private static final int LOGIN_TYPE_CODE = 1;
+    protected String nextPage;
 
     @Override
     protected boolean showTitleBar() {
@@ -88,9 +109,9 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
     @Override
     protected void initData() {
 
+        nextPage = getIntent().getStringExtra("nextPage");
         changeCodeLogin();
 
-        countDown(10, 20);
 
     }
 
@@ -194,8 +215,77 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
     }
 
-    //TODO
+    //登录
     private void loginAction() {
+        try {
+            String pwdEn = AesUtil.Encrypt("CSai@123");
+
+            UserLoginRequest loginRequest = new UserLoginRequest("13900000000", pwdEn, "server", "password", "manager");
+
+            SelfApiService.userLogin(loginRequest)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            (response) -> {
+                                if (response.isSuccess()) {
+                                    loginSuccess(response);
+                                } else {
+                                    ToastUtil.showShort(response.getMsg());
+                                }
+                            },
+                            (throwable) -> {
+                                L.i("登录失败：" + throwable.getMessage());
+                            }
+                    );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    //登录成功
+    private void loginSuccess(YstResponse<LoginUserResp> response) {
+
+        if (response == null || response.getData() == null)
+            return;
+
+        LoginUserResp logResp = response.getData();
+
+        UserInfo.isLogin = true;
+        UserInfo.id = logResp.getId();
+        UserInfo.userName = logResp.getUsername();
+        UserInfo.user_id = logResp.getUser_id();
+        UserInfo.merchant_id = logResp.getMerchant_id();
+        UserInfo.merchantId = logResp.getMerchantId();
+        go2nextPage();
+        finish();
+    }
+
+    //进入下一个页面
+    private void go2nextPage() {
+
+        if (TextUtils.isEmpty(nextPage))
+            return;
+
+        switch (nextPage) {
+
+            case NextPageConstant.CHARGE_PAGE:
+                startActivity(ChargeActivity.class);
+                break;
+
+            case NextPageConstant.QUERY_PAGE:
+                startActivity(QueryActivity.class);
+                break;
+
+            case NextPageConstant.PERSON_PAGE:
+                startActivity(PersonalActivity.class);
+                break;
+
+            case NextPageConstant.SIGN_PAGE:
+                startActivity(SignActivity.class);
+                break;
+
+        }
 
     }
 

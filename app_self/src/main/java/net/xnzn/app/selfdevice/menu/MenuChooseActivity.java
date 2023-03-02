@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.menu.bean.MenuChooseBean;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +83,7 @@ public class MenuChooseActivity extends SelfCommonActivity {
             startActivity(MenuShowActivity.class);
             //BG-31881908220060
         });
-        countDown(10, 20);
+
     }
 
     @Override

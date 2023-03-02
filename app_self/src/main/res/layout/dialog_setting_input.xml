@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="442dp"
+    android:layout_height="265dp"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_white_bg_cir">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30dp"
+        android:text="验证"
+        android:textColor="@color/black_light"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="15dp"
+        android:text="请输入设备密码"
+        android:textColor="@color/black_light"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t1" />
+
+    <EditText
+        android:id="@+id/etRootPwd"
+        android:layout_width="360px"
+        android:layout_height="50px"
+        android:layout_marginTop="20px"
+        android:background="@null"
+        android:hint="请输入密码"
+        app:layout_constraintLeft_toLeftOf="@id/t1"
+        app:layout_constraintTop_toBottomOf="@id/t2" />
+
+    <TextView
+        android:id="@+id/tvRootSure"
+        android:layout_width="100px"
+        android:layout_height="40px"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_theme_color_login"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etRootPwd" />
+
+    <TextView
+        android:id="@+id/tvRootCancel"
+        android:layout_width="100px"
+        android:layout_height="40px"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="20px"
+        android:background="@drawable/shape_login_out_cancel"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/theme_color"
+        android:textSize="15sp"
+        app:layout_constraintRight_toLeftOf="@id/tvRootSure"
+        app:layout_constraintTop_toBottomOf="@id/etRootPwd" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

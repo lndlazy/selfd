@@ -18,6 +18,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
 import net.xnzn.lib_log.L;
 
 import me.jingbin.library.ByRecyclerView;
@@ -124,7 +125,6 @@ public class QueryActivity extends SelfCommonActivity implements QueryView {
 
             }
         });
-        countDown(10, 20);
     }
 
     private Fragment[] fragments;

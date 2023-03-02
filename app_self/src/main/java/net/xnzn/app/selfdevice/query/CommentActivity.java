@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.query.bean.FoodsBean;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
 import net.xnzn.app.selfdevice.widget.RatingStar;
 import net.xnzn.lib_log.L;
 
@@ -65,7 +66,6 @@ public class CommentActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
-        countDown(10, 20);
 
         List<FoodsBean> foodsBeanList = new ArrayList<>();
         foodsBeanList.add(new FoodsBean(1, "", "土豆牛腩/午餐"));

@@ -15,6 +15,7 @@ import net.xnzn.app.selfdevice.menu.bean.MenuDateShowBean;
 import net.xnzn.app.selfdevice.menu.bean.MenuFoodsDetailBean;
 import net.xnzn.app.selfdevice.menu.bean.MenuTypeBean;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +71,7 @@ public class MenuShowActivity extends SelfCommonActivity {
         tabLayout.addTab(tabLayout.newTab().setText("晚餐"));
         tabLayout.addTab(tabLayout.newTab().setText("夜宵"));
 
-        countDown(10, 20);
+
     }
 
     private void setMenuShowAdapter() {

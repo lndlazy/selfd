@@ -19,6 +19,7 @@ import net.xnzn.app.selfdevice.my.fragment.MyFaceFragment;
 import net.xnzn.app.selfdevice.my.fragment.MyHealthFragment;
 import net.xnzn.app.selfdevice.my.fragment.MyModifyPwdFragment;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
 import net.xnzn.lib_log.L;
 
 public class PersonalActivity extends SelfCommonActivity {
@@ -122,7 +123,7 @@ public class PersonalActivity extends SelfCommonActivity {
 
             }
         });
-        countDown(10, 20);
+        
     }
 
     private Fragment[] fragments;

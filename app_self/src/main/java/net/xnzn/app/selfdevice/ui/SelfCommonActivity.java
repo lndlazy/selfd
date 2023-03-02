@@ -10,6 +10,7 @@ import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.UserInfo;
 import net.xnzn.app.selfdevice.count.CountDownBaseActivity;
 import net.xnzn.app.selfdevice.home.HomeActivity;
+import net.xnzn.app.selfdevice.utils.SelfConstant;
 
 public abstract class SelfCommonActivity extends CountDownBaseActivity {
 
@@ -34,8 +35,7 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
 
     @Override
     protected void countDownFinish() {
-        UserInfo.userName = "";
-        UserInfo.isLogin = false;
+        loginOut();
         startActivity(HomeActivity.class);
     }
 
@@ -94,6 +94,12 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
 
     //TODO 退出登录
     protected void loginOut() {
+        UserInfo.isLogin = false;
+        UserInfo.id = "";
+        UserInfo.userName = "";
+        UserInfo.merchantId = "";
+        UserInfo.user_id = "";
+        UserInfo.merchant_id = "";
 
     }
 
@@ -109,5 +115,12 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
         setCountTime(countDownTime);
         setNoActionTime(noActionTime);
         startCountDown();
+    }
+
+    @Override
+    protected void initData() {
+
+        countDown(SelfConstant.NO_ACTION_TIME, SelfConstant.COUNT_DOWN_TIME);
+
     }
 }

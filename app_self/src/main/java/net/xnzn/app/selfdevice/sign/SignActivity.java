@@ -60,7 +60,7 @@ public class SignActivity extends SelfCommonActivity {
     @Override
     protected void initData() {
 
-        countDown(10, 20);
+        
         adapter = new BaseRecyclerAdapter<SignBean>(R.layout.item_sign) {
 
             @Override

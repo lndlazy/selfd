@@ -1,16 +1,15 @@
 package net.xnzn.app.selfdevice;
 
-import android.app.Application;
-
+import net.xnzn.leniu_common_sdk.app.BaseApplication;
 import net.xnzn.lib_log.L;
-import net.xnzn.lib_utils.ToastUtil;
 
-public class SelfApplication extends Application {
+public class SelfApplication extends BaseApplication {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        ToastUtil.init();
+
         L.init();
+
     }
 }

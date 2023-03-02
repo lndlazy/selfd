@@ -5,6 +5,14 @@
     android:layout_height="320dp"
     android:layout_gravity="center"
     android:background="@drawable/shape_white_bg_cir">
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:enabled="true"
+        android:focusable="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvFailSeconds"

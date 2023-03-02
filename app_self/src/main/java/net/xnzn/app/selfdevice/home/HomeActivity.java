@@ -1,7 +1,9 @@
 package net.xnzn.app.selfdevice.home;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,11 +18,15 @@ import net.xnzn.app.selfdevice.charge.ChargeActivity;
 import net.xnzn.app.selfdevice.login.LoginActivity;
 import net.xnzn.app.selfdevice.menu.MenuChooseActivity;
 import net.xnzn.app.selfdevice.my.PersonalActivity;
+import net.xnzn.app.selfdevice.net.SelfApiService;
 import net.xnzn.app.selfdevice.query.QueryActivity;
 import net.xnzn.app.selfdevice.setting.SettingActivity;
 import net.xnzn.app.selfdevice.sign.SignActivity;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
 import net.xnzn.app.selfdevice.utils.DateHelper;
+import net.xnzn.app.selfdevice.utils.NextPageConstant;
+import net.xnzn.leniu_common_ui.setting.SettingHttpActivity;
+import net.xnzn.leniu_http.yunshitang.model.YunContent;
 import net.xnzn.lib_commin_ui.CommonDialog;
 import net.xnzn.lib_commin_ui.base.constant.Constant;
 import net.xnzn.lib_log.L;
@@ -28,6 +34,7 @@ import net.xnzn.lib_log.L;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.adapter.BaseByViewHolder;
 import me.jingbin.library.adapter.BaseRecyclerAdapter;
@@ -35,6 +42,7 @@ import me.jingbin.library.decoration.SpacesItemDecoration;
 
 public class HomeActivity extends SelfCommonActivity implements View.OnClickListener {
 
+    private static final String TAG = "HomeActivity";
     private TextView tvTime, tvDate, tvWeek, tvUserName;
     private ImageView ivSetting, ivHeadPic;
     private ByRecyclerView recyclerView;
@@ -74,6 +82,7 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         ivHeadPic = findViewById(R.id.ivHeadPic);
         recyclerView = findViewById(R.id.recyclerView);
 
+
     }
 
     @Override
@@ -93,6 +102,8 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 
     @Override
     protected void initData() {
+
+//        getAllMenu();
 
         updateTime(System.currentTimeMillis());
         requestPermission(Constant.WRITE_READ_EXTERNAL_CODE, Constant.WRITE_READ_EXTERNAL_PERMISSION);
@@ -145,15 +156,23 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
                         startActivity(MenuChooseActivity.class);
                         break;
                     case 1:
+                        if (checkIsLogin(NextPageConstant.CHARGE_PAGE)) return;
+
                         startActivity(ChargeActivity.class);
                         break;
                     case 2:
+                        if (checkIsLogin(NextPageConstant.QUERY_PAGE)) return;
+
                         startActivity(QueryActivity.class);
                         break;
                     case 3:
+                        if (checkIsLogin(NextPageConstant.PERSON_PAGE)) return;
+
                         startActivity(PersonalActivity.class);
                         break;
                     case 4:
+                        if (checkIsLogin(NextPageConstant.SIGN_PAGE)) return;
+
                         startActivity(SignActivity.class);
                         break;
 
@@ -200,9 +219,11 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 
         if (UserInfo.isLogin) {
             tvUserName.setVisibility(View.VISIBLE);
+            ivHeadPic.setVisibility(View.VISIBLE);
             tvUserName.setText(UserInfo.userName);
         } else {
             tvUserName.setVisibility(View.GONE);
+            ivHeadPic.setVisibility(View.GONE);
             tvUserName.setText("");
         }
     }
@@ -227,35 +248,80 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         switch (view.getId()) {
 
             case R.id.ivSetting:
-                startActivity(UserInfo.isLogin ? SettingActivity.class : LoginActivity.class);
+//                startActivity(UserInfo.isLogin ? SettingActivity.class : LoginActivity.class);
+//                startActivity(SettingHttpActivity.class);
+                showRootDialog();
                 break;
             case R.id.ivHeadPic:
-//                if (!UserInfo.isLogin)
-//                    startActivity(LoginActivity.class);
-//                else {
 
-                if (dialog == null) {
-                    dialog = new Dialog(this);
-                    dialog.setContentView(R.layout.dialog_login_out);
-                    dialog.setCanceledOnTouchOutside(true);
-                    dialog.findViewById(R.id.tvCancel).setOnClickListener(view1 -> dialog.dismiss());
-                    dialog.findViewById(R.id.tvSure).setOnClickListener(v -> loginOut());
-                }
-                if (!dialog.isShowing())
-                    dialog.show();
+                //if (checkIsLogin()) return;
 
-//                CommonDialog commonDialog = new CommonDialog(this, "", "是否确认退出登录？", "确认", "取消", new CommonDialog.DialogClickListener() {
-//                    @Override
-//                    public void onDialogClick() {
-//                        L.i("退出确认");
-//                    }
-//                });
-//
-//                commonDialog.show();
-//                }
+                showExitDialog();
+
                 break;
         }
     }
 
+    private void showExitDialog() {
+        if (dialog == null) {
+            dialog = new Dialog(this);
+            dialog.setContentView(R.layout.dialog_login_out);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.findViewById(R.id.tvCancel).setOnClickListener(view1 -> dialog.dismiss());
+            dialog.findViewById(R.id.tvSure).setOnClickListener(v -> loginOut());
+        }
+        if (!dialog.isShowing())
+            dialog.show();
+    }
+
+    private Dialog settingDialog;
+
+    private void showRootDialog() {
+
+        if (settingDialog == null) {
+            settingDialog = new Dialog(this);
+            settingDialog.setContentView(R.layout.dialog_setting_input);
+            settingDialog.setCanceledOnTouchOutside(true);
+            settingDialog.findViewById(R.id.tvRootCancel).setOnClickListener(view1 -> settingDialog.dismiss());
+            settingDialog.findViewById(R.id.tvRootSure).setOnClickListener(v -> go2Setting());
+        }
+        if (!settingDialog.isShowing())
+            settingDialog.show();
+    }
+
+    private void go2Setting() {
+        startActivity(SettingActivity.class);
+    }
+
+    private boolean checkIsLogin(String nextPage) {
+
+//        Log.d(TAG, "isLogin::" + UserInfo.isLogin);
+        if (!UserInfo.isLogin) {
+            Intent m = new Intent(this, LoginActivity.class);
+            m.putExtra("nextPage", nextPage);
+            startActivity(m);
+//            startActivity(LoginActivity.class);
+            return true;
+        }
+        return false;
+    }
+
+//    private void getAllMenu() {
+//
+//        SelfApiService.menuInfo(new YunContent())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        (response) -> {
+//                            if (response.isSuccess()) {
+//                                Void data = response.getData();
+//                                L.i("menuInfo成功：");
+//                            }
+//                        },
+//                        (throwable) -> {
+//                            L.e("menuInfo失败：" + throwable.getMessage());
+//                        }
+//                );
+//
+//    }
 
 }

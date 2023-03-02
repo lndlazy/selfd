@@ -1,6 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.allen.library.SuperTextView
+        android:id="@+id/stvParams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="参数配置"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ededed" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stvUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="用户管理"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ededed" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stvHttpConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="通信配置"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ededed" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stvSystemConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="系统设置"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ededed" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stvDeviceInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="本机信息"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ededed" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stvUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="更新日志"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ededed" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:sDividerLineColor="#ededed"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftBottomTextColor="#999"
+        app:sLeftBottomTextSize="12sp"
+        app:sLeftBottomTextString=""
+        app:sLeftTopTextColor="#333"
+        app:sLeftTopTextSize="16sp"
+        app:sLeftTopTextString="设备自检"
+        app:sLeftViewGravity="left_center"
+        app:sRightIconHeight="30dp"
+        app:sRightIconRes="@drawable/common_arrow_right"
+        app:sRightIconWidth="30dp"
+        app:sRightTextColor="#333"
+        app:sRightTextString=""
+        app:sShapeSelectorNormalColor="#FFF"
+        app:sUseShape="true" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
