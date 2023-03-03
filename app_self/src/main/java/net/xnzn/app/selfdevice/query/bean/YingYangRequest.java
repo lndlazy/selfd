@@ -7,7 +7,7 @@ package net.xnzn.app.selfdevice.query.bean;
 public class YingYangRequest {
 
     private int analyseScope = 1;
-    private Long custId;
+    private String custId;
 
     public int getAnalyseScope() {
         return analyseScope;
@@ -17,12 +17,11 @@ public class YingYangRequest {
         this.analyseScope = analyseScope;
     }
 
-
-    public Long getCustId() {
+    public String getCustId() {
         return custId;
     }
 
-    public void setCustId(Long custId) {
+    public void setCustId(String custId) {
         this.custId = custId;
     }
 }

@@ -73,6 +73,7 @@ public class PersonalActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
+        super.initData();
 
         initFragments();
         //禁用预加载

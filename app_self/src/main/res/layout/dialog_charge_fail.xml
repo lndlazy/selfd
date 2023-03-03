@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:background="@drawable/shape_white_bg_cir">
     <EditText
-        android:id="@+id/etInput"
+        android:id="@+id/etInputt"
         android:layout_width="1px"
         android:layout_height="1px"
         android:enabled="true"

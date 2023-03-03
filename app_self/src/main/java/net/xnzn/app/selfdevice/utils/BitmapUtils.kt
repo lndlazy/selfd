@@ -11,11 +11,9 @@ import android.provider.MediaStore
 import android.util.Log
 
 import java.io.ByteArrayOutputStream
-import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.concurrent.thread
-import kotlin.math.log
 
 /**
  *
@@ -115,7 +113,7 @@ object BitmapUtils {
                 //TODO 保存图片
 
                 val temp = System.currentTimeMillis()
-                val picFile = FileUtil.createCameraFile(folderName)
+                val picFile = MFileUtil.createCameraFile(folderName)
                 if (picFile != null && data != null) {
 
 //                    val rawBitmap = BitmapFactory.decodeByteArray(data, 0, data.size)

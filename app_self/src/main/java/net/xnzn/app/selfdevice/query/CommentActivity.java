@@ -66,6 +66,7 @@ public class CommentActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
+        super.initData();
 
         List<FoodsBean> foodsBeanList = new ArrayList<>();
         foodsBeanList.add(new FoodsBean(1, "", "土豆牛腩/午餐"));

@@ -11,13 +11,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.xnzn.app.selfdevice.R;
+import net.xnzn.app.selfdevice.UserInfo;
+import net.xnzn.app.selfdevice.net.SelfApiService;
+import net.xnzn.app.selfdevice.sign.bean.Req.BookListRequest;
 import net.xnzn.app.selfdevice.sign.bean.SignBean;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
+import net.xnzn.lib_log.L;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.adapter.BaseByViewHolder;
 import me.jingbin.library.adapter.BaseRecyclerAdapter;
@@ -59,8 +64,10 @@ public class SignActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
+        super.initData();
 
-        
+
+        getBookList();
         adapter = new BaseRecyclerAdapter<SignBean>(R.layout.item_sign) {
 
             @Override
@@ -107,6 +114,29 @@ public class SignActivity extends SelfCommonActivity {
         list.add(new SignBean());
         list.add(new SignBean());
         adapter.setNewData(list);
+    }
+
+    private void getBookList() {
+
+//        if (UserInfo.yunUser == null)
+//            return;
+//        //报餐列表
+//        BookListRequest bookListRequest = new BookListRequest();
+//        bookListRequest.setCustId(UserInfo.yunUser.getCustId());
+//        SelfApiService.bookList(bookListRequest)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        (response) -> {
+//                            if (response.isSuccess()) {
+////                                Void data = response.getData();
+//                                L.i("报餐列表成功：");
+//                            }
+//                        },
+//                        (throwable) -> {
+//                            L.e("报餐列表失败：" + throwable.getMessage());
+//                        }
+//                );
+
     }
 
     private Dialog dialog;

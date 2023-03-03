@@ -60,6 +60,7 @@ public class MenuShowActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
+        super.initData();
 
         setDateAdapter();
         setTypeAdapter();

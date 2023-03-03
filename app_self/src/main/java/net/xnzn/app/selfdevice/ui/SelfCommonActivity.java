@@ -85,7 +85,8 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
             tvExit.setVisibility(View.VISIBLE);
             tvBarName.setVisibility(View.VISIBLE);
             ivBarHeadPic.setVisibility(View.VISIBLE);
-            tvBarName.setText(UserInfo.userName);
+            if (UserInfo.yunUser != null)
+                tvBarName.setText(UserInfo.yunUser.getCustName());
             tvExit.setOnClickListener(v -> {
                 loginOut();
             });
@@ -95,11 +96,7 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
     //TODO 退出登录
     protected void loginOut() {
         UserInfo.isLogin = false;
-        UserInfo.id = "";
-        UserInfo.userName = "";
-        UserInfo.merchantId = "";
-        UserInfo.user_id = "";
-        UserInfo.merchant_id = "";
+        UserInfo.yunUser = null;
 
     }
 

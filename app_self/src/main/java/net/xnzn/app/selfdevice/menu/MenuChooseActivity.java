@@ -55,6 +55,8 @@ public class MenuChooseActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
+        super.initData();
+
         chooseBeanList.add(new MenuChooseBean(1, "自助餐菜谱", ""));
         chooseBeanList.add(new MenuChooseBean(2, "自助餐菜谱", ""));
         chooseBeanList.add(new MenuChooseBean(3, "自助餐菜谱", ""));

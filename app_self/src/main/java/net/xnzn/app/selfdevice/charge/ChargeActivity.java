@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import net.xnzn.app.selfdevice.BuildConfig;
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.UserInfo;
 import net.xnzn.app.selfdevice.charge.req.AddBalanceRequest;
@@ -55,6 +56,7 @@ public class ChargeActivity extends SelfCommonActivity {
     private static final int STATUS_CHARGE_SUCCESS = 3;//充值成功
     private static final int STATUS_CHARGE_CANCEL = 4;//取消充值
     protected EditText etInput;
+    protected int iChargeMoney;
 
 
     @Override
@@ -125,9 +127,33 @@ public class ChargeActivity extends SelfCommonActivity {
 
     @Override
     protected void initData() {
+        super.initData();
 
         current_charge_status = STATUS_FREE;
 
+        setMoneyInfo();
+
+    }
+
+    private void setMoneyInfo() {
+
+        if (UserInfo.yunUser == null)
+            return;
+
+        if (UserInfo.yunUser.getAccBal() != null)
+            tvTotalLeft.setText("￥" + (new BigDecimal(UserInfo.yunUser.getAccBal()).intValue() / 100)); //总金额
+
+        if (UserInfo.yunUser.getWalletBal() != null)
+            tvMoney1.setText("￥" + (new BigDecimal(UserInfo.yunUser.getWalletBal()).intValue() / 100)); //个人钱包
+
+        if (UserInfo.yunUser.getSubsidyBal() != null)
+            tvMoney2.setText("￥" + (new BigDecimal(UserInfo.yunUser.getSubsidyBal()).intValue() / 100)); //补贴钱包
+
+//        if (UserInfo.yunUser. () != null)
+//        tvMoney3.setText("￥" + (new BigDecimal(UserInfo.yunUser. ()).intValue() / 100)); //红包钱包
+//
+//        if (UserInfo.yunUser. () != null)
+//             tvMoney4.setText("￥" + (new BigDecimal(UserInfo.yunUser. ()).intValue() / 100)); //冻结钱包
     }
 
 
@@ -150,8 +176,8 @@ public class ChargeActivity extends SelfCommonActivity {
         try {
 
             String money = moneys[currentPosition].replace("元", "");
-            int iMoney = Integer.parseInt(money);
-            chargeAction(iMoney, code);
+            iChargeMoney = Integer.parseInt(money) * 100;
+            chargeAction(iChargeMoney, code);
 
         } catch (Exception e) {
             L.e(TAG + "充值出错:" + e.getMessage());
@@ -174,10 +200,17 @@ public class ChargeActivity extends SelfCommonActivity {
             return;
         }
 
+        if (UserInfo.yunUser == null) {
+            ToastUtil.showShort("未获取到用户信息..");
+            current_charge_status = STATUS_CHARGE_CANCEL;
+            cancelCharge();
+            return;
+        }
+
         AddBalanceRequest balanceRequest = new AddBalanceRequest();
-        BigDecimal bigDecimal = new BigDecimal(iMoney * 100);
-        balanceRequest.setAmount(bigDecimal.intValue());
-        balanceRequest.setCustId(UserInfo.id);
+        BigDecimal bigDecimal = new BigDecimal(iMoney);
+        balanceRequest.setAmount(BuildConfig.isTest ? 1 : bigDecimal.intValue());
+        balanceRequest.setCustId(UserInfo.yunUser.getCustId());
         balanceRequest.setPayType(10);
         balanceRequest.setAuthCode(code);
         current_charge_status = STATUS_CHARGING;
@@ -198,7 +231,6 @@ public class ChargeActivity extends SelfCommonActivity {
                         }
                 );
 
-
     }
 
     //充值失败
@@ -214,6 +246,16 @@ public class ChargeActivity extends SelfCommonActivity {
     private void chargeSuccess() {
         current_charge_status = STATUS_CHARGE_SUCCESS;
         disMissChargeDialog();
+
+        if (UserInfo.yunUser == null) {
+            ToastUtil.showShort("用户未登录，请检查余额");
+            return;
+        }
+
+        //修改页面信息
+        UserInfo.yunUser.setWalletBal(String.valueOf(new BigDecimal(UserInfo.yunUser.getWalletBal()).intValue() + iChargeMoney));
+        UserInfo.yunUser.setAccBal(String.valueOf(new BigDecimal(UserInfo.yunUser.getAccBal()).intValue() + iChargeMoney));
+        setMoneyInfo();
     }
 
     @Override
@@ -314,7 +356,8 @@ public class ChargeActivity extends SelfCommonActivity {
             tvFailSeconds = chargeFailDialog.findViewById(R.id.tvFailSeconds);
             TextView tvExit = chargeFailDialog.findViewById(R.id.tvExit);
             TextView tvContain = chargeFailDialog.findViewById(R.id.tvContain);
-
+            EditText etInputt = chargeFailDialog.findViewById(R.id.etInputt);
+            etInputt.setInputType(InputType.TYPE_NULL);
             //退出充值页面， 返回首页
             tvExit.setOnClickListener(v -> {
                 disMissChargeDialog();

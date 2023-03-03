@@ -75,6 +75,7 @@ public class QueryActivity extends SelfCommonActivity implements QueryView {
 
     @Override
     protected void initData() {
+        super.initData();
 
         initFragments();
         //禁用预加载

@@ -9,13 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
 import net.xnzn.app.selfdevice.R;
+import net.xnzn.app.selfdevice.login.bean.respo.YunUser;
 import net.xnzn.app.selfdevice.query.bean.YingYangResponse;
-import net.xnzn.app.selfdevice.query.bean.YunUser;
 import net.xnzn.app.selfdevice.query.presenter.NutritionPresenter;
 import net.xnzn.app.selfdevice.query.view.NutritionView;
 import net.xnzn.app.selfdevice.ui.BaseFragment;

@@ -3,33 +3,34 @@ package net.xnzn.app.selfdevice.home;
 import android.app.Dialog;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.UserInfo;
 import net.xnzn.app.selfdevice.charge.ChargeActivity;
 import net.xnzn.app.selfdevice.login.LoginActivity;
+import net.xnzn.app.selfdevice.login.LoginSuc;
+import net.xnzn.app.selfdevice.login.bean.request.UserLoginBean;
+import net.xnzn.app.selfdevice.login.bean.respo.YunUser;
 import net.xnzn.app.selfdevice.menu.MenuChooseActivity;
 import net.xnzn.app.selfdevice.my.PersonalActivity;
 import net.xnzn.app.selfdevice.net.SelfApiService;
 import net.xnzn.app.selfdevice.query.QueryActivity;
+import net.xnzn.app.selfdevice.query.bean.OrderListRequest;
 import net.xnzn.app.selfdevice.setting.SettingActivity;
+import net.xnzn.app.selfdevice.setting.bean.SelfSettingBean;
 import net.xnzn.app.selfdevice.sign.SignActivity;
 import net.xnzn.app.selfdevice.ui.SelfCommonActivity;
 import net.xnzn.app.selfdevice.utils.DateHelper;
 import net.xnzn.app.selfdevice.utils.NextPageConstant;
-import net.xnzn.leniu_common_ui.setting.SettingHttpActivity;
-import net.xnzn.leniu_http.yunshitang.model.YunContent;
-import net.xnzn.lib_commin_ui.CommonDialog;
+import net.xnzn.app.selfdevice.utils.TimeUtil;
 import net.xnzn.lib_commin_ui.base.constant.Constant;
 import net.xnzn.lib_log.L;
+import net.xnzn.lib_utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,7 +104,7 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
     @Override
     protected void initData() {
 
-//        getAllMenu();
+        testApi();
 
         updateTime(System.currentTimeMillis());
         requestPermission(Constant.WRITE_READ_EXTERNAL_CODE, Constant.WRITE_READ_EXTERNAL_PERMISSION);
@@ -220,7 +221,8 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         if (UserInfo.isLogin) {
             tvUserName.setVisibility(View.VISIBLE);
             ivHeadPic.setVisibility(View.VISIBLE);
-            tvUserName.setText(UserInfo.userName);
+            if (UserInfo.yunUser != null)
+                tvUserName.setText(UserInfo.yunUser.getCustName());
         } else {
             tvUserName.setVisibility(View.GONE);
             ivHeadPic.setVisibility(View.GONE);
@@ -268,7 +270,12 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
             dialog.setContentView(R.layout.dialog_login_out);
             dialog.setCanceledOnTouchOutside(true);
             dialog.findViewById(R.id.tvCancel).setOnClickListener(view1 -> dialog.dismiss());
-            dialog.findViewById(R.id.tvSure).setOnClickListener(v -> loginOut());
+            dialog.findViewById(R.id.tvSure).setOnClickListener(v ->
+            {
+                loginOut();
+                if (dialog != null && dialog.isShowing())
+                    dialog.dismiss();
+            });
         }
         if (!dialog.isShowing())
             dialog.show();
@@ -283,7 +290,12 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
             settingDialog.setContentView(R.layout.dialog_setting_input);
             settingDialog.setCanceledOnTouchOutside(true);
             settingDialog.findViewById(R.id.tvRootCancel).setOnClickListener(view1 -> settingDialog.dismiss());
-            settingDialog.findViewById(R.id.tvRootSure).setOnClickListener(v -> go2Setting());
+            settingDialog.findViewById(R.id.tvRootSure).setOnClickListener(v ->
+                    {
+                        settingDialog.dismiss();
+                        go2Setting();
+                    }
+            );
         }
         if (!settingDialog.isShowing())
             settingDialog.show();
@@ -306,8 +318,8 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         return false;
     }
 
-//    private void getAllMenu() {
-//
+    private void testApi() {
+
 //        SelfApiService.menuInfo(new YunContent())
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe(
@@ -323,5 +335,70 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 //                );
 //
 //    }
+
+//        //个人设置
+//        SelfSettingBean settingBean = new SelfSettingBean();
+//        SelfSettingBean.SelfServiceMetadate selfServiceMetadate = new SelfSettingBean.SelfServiceMetadate();
+//        selfServiceMetadate.setIdentityFace("1");
+//        selfServiceMetadate.setIdentityQR("1");
+//        selfServiceMetadate.setIdentityCard("1");
+//        settingBean.setMetadata(selfServiceMetadate);
+//        SelfApiService.deviceInfo(settingBean)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        (response) -> {
+//                            if (response.isSuccess()) {
+//                                Void data = response.getData();
+//                                L.i("deviceInfo成功：");
+//                            }
+//                        },
+//                        (throwable) -> {
+//                            L.e("deviceInfo失败：" + throwable.getMessage());
+//                        }
+//                );
+
+//        //登录
+//        UserLoginBean userLoginBean = new UserLoginBean();
+//        userLoginBean.setSerialNum("623E1E2F");
+////        userLoginBean.setCustId("-1");
+//        SelfApiService.queryUser(userLoginBean)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        (response) -> {
+//                            if (response.isSuccess()) {
+////                                Void data = response.getData();
+//                                L.i("queryUser成功：");
+//                                List<YunUser> data = response.getData();
+//
+//                                if (data == null || data.size() < 1)
+//                                    return;
+//
+//                                LoginSuc.setLoginInfo(data.get(0));
+//
+//                            }
+//                        },
+//                        (throwable) -> {
+//                            L.e("queryUser失败：" + throwable.getMessage());
+//                            ToastUtil.showShort("登录失败：" + throwable.getMessage());
+//                        }
+//                );
+
+//        //列表
+//        OrderListRequest orderListRequest = new OrderListRequest(1, TimeUtil.getCurrentYmd2(), 1, -1);
+//        SelfApiService.getOrderList(orderListRequest)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        (response) -> {
+//                            if (response.isSuccess()) {
+////                                Void data = response.getData();
+//                                L.i("queryUser成功：");
+//                            }
+//                        },
+//                        (throwable) -> {
+//                            L.e("queryUser失败：" + throwable.getMessage());
+//                        }
+//                );
+
+    }
 
 }

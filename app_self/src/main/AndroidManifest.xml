@@ -55,8 +55,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.SelfDevice">
+        android:theme="@style/Theme.SelfDevice"
+        android:usesCleartextTraffic="true">
 
         <!--        &lt;!&ndash;arms 配置&ndash;&gt;-->
         <!--        <meta-data-->
@@ -65,6 +65,7 @@
 
         <activity
             android:name=".home.HomeActivity"
+            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -83,7 +84,20 @@
         <activity android:name=".query.QueryActivity" />
         <activity android:name=".query.CommentActivity" />
         <activity android:name=".login.FaceLoginActivity" />
-        <activity android:name=".login.CardLoginActivity" />
+        <activity
+            android:name=".login.CardLoginActivity"
+            android:exported="true">
+
+            <!-- USB -->
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+            <!-- USB END -->
+        </activity>
 
         <activity
             android:name=".login.ScanLoginActivity"

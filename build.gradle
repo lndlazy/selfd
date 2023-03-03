@@ -1,12 +1,71 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//引入根工程下的统一版本管理文件
+apply from: this.rootProject.file('config.gradle')
+
+buildscript {
+    ext {
+        kotlin_version = '1.5.31'
+    }
 
 
-plugins {
-    id 'com.android.application' version '7.1.1' apply false
-    id 'com.android.library' version '7.1.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.5.30' apply false
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        //greendao插件依赖
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        //ARouter插件依赖
+        classpath "com.alibaba:arouter-register:1.0.2"
+        //andserver插件依赖
+        classpath 'com.yanzhenjie.andserver:plugin:2.1.10'
+        //kotlin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin"
+        //fat-aar,合并aar
+        classpath 'com.github.kezong:fat-aar:1.3.8'
+
+    }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+allprojects {
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+
+        jcenter()
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+
+//        maven {
+//            url 'https://maven.aliyun.com/repository/public'
+//        }
+
+        //云效release仓库
+        maven {
+            credentials {
+                username YX_USERNAME
+                password YX_PASSWORD
+            }
+            //release
+            url YX_RELEASE_REPOSITORY_URL
+        }
+
+        //云效snapshot仓库
+        maven {
+            credentials {
+                username YX_USERNAME
+                password YX_PASSWORD
+            }
+            //snapshot
+            url YX_SNAPSHOT_REPOSITORY_URL
+        }
+    }
+
+
 }

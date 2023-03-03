@@ -12,7 +12,7 @@ public class NutritionPresenter {
         this.view = view;
     }
 
-    public void queryData(int dayOrWeek, Long custId) {
+    public void queryData(int dayOrWeek, String custId) {
         YingYangRequest request = new YingYangRequest();
         request.setAnalyseScope(dayOrWeek);
         request.setCustId(custId);

@@ -2,8 +2,10 @@ package net.xnzn.app.selfdevice.login;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,6 +20,7 @@ import com.google.gson.GsonBuilder;
 import net.xnzn.app.selfdevice.R;
 import net.xnzn.app.selfdevice.UserInfo;
 import net.xnzn.app.selfdevice.charge.ChargeActivity;
+import net.xnzn.app.selfdevice.home.HomeActivity;
 import net.xnzn.app.selfdevice.login.bean.request.LoginUserResp;
 import net.xnzn.app.selfdevice.login.bean.request.UserLoginRequest;
 import net.xnzn.app.selfdevice.my.PersonalActivity;
@@ -39,6 +42,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 
 public class LoginActivity extends SelfCommonActivity implements View.OnClickListener {
 
+    private static final String TAG = "LoginActivity";
     private TextView tvCodeLogin, tvPwdLogin, tvGetCode, tvLogin;
 
     private View line1, line2;
@@ -71,7 +75,6 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
     protected boolean showTitle() {
         return true;
     }
-
 
     @Override
     protected boolean showBar() {
@@ -108,6 +111,7 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
     @Override
     protected void initData() {
+        super.initData();//调用父类initData 开启默认倒计时
 
         nextPage = getIntent().getStringExtra("nextPage");
         changeCodeLogin();
@@ -144,7 +148,14 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
+
         switch (view.getId()) {
+
+//            case R.id.ivBack:
+//            case R.id.tvBack:
+//                Log.d(TAG, "loginActivity登录返回-->");
+//                startActivity(HomeActivity.class);
+//                break;
 
             case R.id.tvPwdLogin://切换用户名密码登录
                 changePwdLogin();
@@ -169,14 +180,30 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
                 break;
 
             case R.id.ivCard://切换刷卡登录
+                Intent m = new Intent(this, CardLoginActivity.class);
+                m.putExtra("nextPage", nextPage);
+                startActivity(m);
+                finish();
+//                startActivity(CardLoginActivity.class);
+
                 break;
 
             case R.id.ivFace://切换刷脸登录
-                startActivity(FaceLoginActivity.class);
+
+                Intent m1 = new Intent(this, FaceLoginActivity.class);
+                m1.putExtra("nextPage", nextPage);
+                startActivity(m1);
+                finish();
+
+//                startActivity(FaceLoginActivity.class);
                 break;
 
             case R.id.ivScan://切换扫码登录
-                startActivity(ScanLoginActivity.class);
+                Intent m2 = new Intent(this, ScanLoginActivity.class);
+                m2.putExtra("nextPage", nextPage);
+                startActivity(m2);
+//                startActivity(ScanLoginActivity.class);
+
                 finish();
                 break;
 
@@ -251,43 +278,40 @@ public class LoginActivity extends SelfCommonActivity implements View.OnClickLis
 
         LoginUserResp logResp = response.getData();
 
-        UserInfo.isLogin = true;
-        UserInfo.id = logResp.getId();
-        UserInfo.userName = logResp.getUsername();
-        UserInfo.user_id = logResp.getUser_id();
-        UserInfo.merchant_id = logResp.getMerchant_id();
-        UserInfo.merchantId = logResp.getMerchantId();
-        go2nextPage();
+//        UserInfo.isLogin = true;
+//        UserInfo.yunUser =
+//        go2nextPage();
+        startActivity(NextPageAction.go2nextPage(nextPage));
         finish();
     }
 
-    //进入下一个页面
-    private void go2nextPage() {
-
-        if (TextUtils.isEmpty(nextPage))
-            return;
-
-        switch (nextPage) {
-
-            case NextPageConstant.CHARGE_PAGE:
-                startActivity(ChargeActivity.class);
-                break;
-
-            case NextPageConstant.QUERY_PAGE:
-                startActivity(QueryActivity.class);
-                break;
-
-            case NextPageConstant.PERSON_PAGE:
-                startActivity(PersonalActivity.class);
-                break;
-
-            case NextPageConstant.SIGN_PAGE:
-                startActivity(SignActivity.class);
-                break;
-
-        }
-
-    }
+//    //进入下一个页面
+//    private void go2nextPage() {
+//
+//        if (TextUtils.isEmpty(nextPage))
+//            return;
+//
+//        switch (nextPage) {
+//
+//            case NextPageConstant.CHARGE_PAGE:
+//                startActivity(ChargeActivity.class);
+//                break;
+//
+//            case NextPageConstant.QUERY_PAGE:
+//                startActivity(QueryActivity.class);
+//                break;
+//
+//            case NextPageConstant.PERSON_PAGE:
+//                startActivity(PersonalActivity.class);
+//                break;
+//
+//            case NextPageConstant.SIGN_PAGE:
+//                startActivity(SignActivity.class);
+//                break;
+//
+//        }
+//
+//    }
 
     private void getLoginCode() {
 

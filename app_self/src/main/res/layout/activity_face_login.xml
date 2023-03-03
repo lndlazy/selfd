@@ -6,35 +6,74 @@
     android:layout_marginTop="@dimen/title_height">
 
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="@string/face_login"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold"
+    <TextureView
+        android:id="@+id/sfvIR"
+        android:layout_width="260px"
+        android:layout_height="280px"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40px"
+        android:layout_marginRight="35px"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <net.xnzn.app.selfdevice.widget.AutoFitTextureView
-        android:id="@+id/textureView"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="100dp"
+    <TextureView
+        android:id="@+id/sfvRgb"
+        android:layout_width="260px"
+        android:layout_height="280px"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40px"
+        android:layout_marginRight="35px"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.cs.camera.view.FaceView
-        android:id="@+id/faceView"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        app:layout_constraintLeft_toLeftOf="@id/textureView"
-        app:layout_constraintTop_toTopOf="@id/textureView" />
+
+    <TextView
+        android:layout_width="260px"
+        android:layout_height="40px"
+        android:layout_alignRight="@id/sfvRgb"
+        android:layout_alignBottom="@id/sfvRgb"
+        android:background="#8F000000"
+        android:gravity="center"
+        android:text="请将人脸对准摄像头"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sfvIR" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="160dp"-->
+    <!--        android:text="@string/face_login"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="40sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <!--    <net.xnzn.app.selfdevice.widget.AutoFitTextureView-->
+    <!--        android:id="@+id/textureView"-->
+    <!--        android:layout_width="350dp"-->
+    <!--        android:layout_height="350dp"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv1" />-->
+
+    <!--    <com.cs.camera.view.FaceView-->
+    <!--        android:id="@+id/faceView"-->
+    <!--        android:layout_width="350dp"-->
+    <!--        android:layout_height="350dp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/textureView"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/textureView" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

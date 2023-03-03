@@ -12,8 +12,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import net.xnzn.app.selfdevice.R;
+import net.xnzn.app.selfdevice.login.bean.respo.YunUser;
 import net.xnzn.app.selfdevice.query.bean.HealthRecord;
-import net.xnzn.app.selfdevice.query.bean.YunUser;
 import net.xnzn.app.selfdevice.query.presenter.HealthPresenter;
 import net.xnzn.app.selfdevice.query.view.HealthView;
 import net.xnzn.app.selfdevice.ui.BaseFragment;
@@ -152,7 +152,7 @@ public class HealthFragment extends BaseFragment implements View.OnClickListener
 
 
     private int current = 1;
-    private Long custId;
+    private String custId;
     private String queryDate;//查询月份
 
     public void showDatePickDlg() {

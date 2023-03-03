@@ -50,7 +50,8 @@ public class SettingActivity extends SelfCommonActivity implements View.OnClickL
 
     @Override
     protected void initData() {
-        
+        super.initData();
+
     }
 
     @Override
