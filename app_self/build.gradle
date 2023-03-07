@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId "net.xnzn.app.selfdevice"
         minSdk 21
-        targetSdk 31
+        targetSdk 25
         versionCode 1
         versionName "1.0"
 
@@ -113,6 +113,7 @@ dependencies {
     implementation 'net.xnzn.android:leniu_http:1.0.0-SNAPSHOT'
     implementation 'net.xnzn.android:leniu_base:1.0.0-SNAPSHOT'
     implementation 'net.xnzn.android:leniu_common_sdk:1.0.0-SNAPSHOT'
+    implementation 'net.xnzn.android:lib_webservice:1.0.0-SNAPSHOT'
 
 
     implementation 'net.xnzn.android:lib_common_ui:1.0.0-SNAPSHOT'
@@ -122,6 +123,7 @@ dependencies {
     implementation 'net.xnzn.android:lib_qrcode:1.0.0-SNAPSHOT'
     implementation 'net.xnzn.android:lib_reader:1.0.0-SNAPSHOT'
     implementation 'net.xnzn.android:lib_mqtt:1.0.0-SNAPSHOT'
+    implementation 'net.xnzn.android:leniu_db:1.0.1-SNAPSHOT'
     //UVC camera
     implementation 'com.herohan:UVCAndroid:1.0.4'
 

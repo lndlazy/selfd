@@ -716,8 +716,12 @@ public class Camera2Manager {
     public Camera2Manager setCameraId(int cameraId) {
         mCameraId = cameraId;
         if (LeniuUsbManger.getInstance().hasHRgbCamera()) {
-            mPreviewRotation = 90;
+            mPreviewRotation = 270;
+//            Log.d(TAG, "mPreviewRotation===>>" + mPreviewRotation);
         }
+//        mPreviewRotation = 270;
+//        Log.d(TAG, "  xxx  mPreviewRotation===>>" + mPreviewRotation);
+
         return this;
     }
 

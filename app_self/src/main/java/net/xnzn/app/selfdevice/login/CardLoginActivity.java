@@ -106,7 +106,7 @@ public class CardLoginActivity extends SelfCommonActivity implements LoginView {
 
     private void cardLogin(String kxh) {
 
-        loginPresenter.loginIn(kxh, null,  nextPage);
+        loginPresenter.loginIn(kxh, null, nextPage);
 //        //登录
 //        UserLoginBean userLoginBean = new UserLoginBean();
 //        userLoginBean.setSerialNum(kxh);
@@ -159,8 +159,4 @@ public class CardLoginActivity extends SelfCommonActivity implements LoginView {
 
     }
 
-    @Override
-    public Context getMyAppContext() {
-        return getApplicationContext();
-    }
 }

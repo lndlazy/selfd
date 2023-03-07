@@ -96,7 +96,8 @@ public class LeniuUsbManger {
 
 
     public boolean hasHRgbCamera() {
-        return findDevice(H_RGB_VID, H_RGB_PID) != null;
+//        return findDevice(H_RGB_VID, H_RGB_PID) != null;
+        return findDevice(NORMAL_IR_VID, NORMAL_IR_PID) != null;
     }
 
     public boolean isHRgbCamera(UsbDevice device) {

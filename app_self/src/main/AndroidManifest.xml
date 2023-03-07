@@ -65,7 +65,14 @@
 
         <activity
             android:name=".home.HomeActivity"
-            android:launchMode="singleTask"
+            android:exported="true"
+            android:launchMode="singleTask">
+
+        </activity>
+
+
+        <activity
+            android:name=".init.InitActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,6 +80,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".login.LoginActivity">
 
 
@@ -116,6 +125,7 @@
         </activity>
         <activity android:name=".my.PersonalActivity" />
         <activity android:name=".sign.SignActivity" />
+
     </application>
 
 </manifest>

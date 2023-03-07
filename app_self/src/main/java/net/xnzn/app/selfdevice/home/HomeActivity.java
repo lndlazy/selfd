@@ -83,7 +83,6 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
         ivHeadPic = findViewById(R.id.ivHeadPic);
         recyclerView = findViewById(R.id.recyclerView);
 
-
     }
 
     @Override
@@ -93,7 +92,7 @@ public class HomeActivity extends SelfCommonActivity implements View.OnClickList
 
     private void initHomeItem() {
 
-        homeItems.add(new HomeItem(R.mipmap.ic_menu, "菜单公示", ""));
+        homeItems.add(new HomeItem(R.mipmap.ic_menu, "菜谱公示", ""));
         homeItems.add(new HomeItem(R.mipmap.ic_charge, "余额/充值", ""));
         homeItems.add(new HomeItem(R.mipmap.ic_query, "综合查询", "订单、营养、健康"));
         homeItems.add(new HomeItem(R.mipmap.ic_personal, "个人信息", "照片、地址、密码"));

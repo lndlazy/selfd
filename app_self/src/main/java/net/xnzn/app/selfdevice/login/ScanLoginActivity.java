@@ -144,8 +144,4 @@ public class ScanLoginActivity extends SelfCommonActivity implements LoginView {
 
     }
 
-    @Override
-    public Context getMyAppContext() {
-        return getApplicationContext();
-    }
 }

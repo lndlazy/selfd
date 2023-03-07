@@ -23,13 +23,14 @@ public class LoginPresenter {
         this.loginView = loginView;
     }
 
-    public void loginIn(String serialNum, String custId, String nextPage) {
+    public void loginIn( String serialNum, String custId, String nextPage) {
 
         Log.d(TAG, "serialNum:" + serialNum + ",custId:" + custId);
         //登录
         UserLoginBean userLoginBean = new UserLoginBean();
 //        if (serialNum != null)
         userLoginBean.setSerialNum(serialNum);
+//        userLoginBean.setMerchantId(faceId);
         userLoginBean.setCustId(custId);
         SelfApiService.queryUser(userLoginBean)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -41,7 +42,6 @@ public class LoginPresenter {
                                 loginSuc(nextPage, response);
 
 //                                loginSuccess(response);
-
                             }
                         },
                         (throwable) -> {

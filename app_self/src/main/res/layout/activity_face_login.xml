@@ -7,9 +7,9 @@
 
 
     <TextureView
-        android:id="@+id/sfvIR"
-        android:layout_width="260px"
-        android:layout_height="280px"
+        android:id="@+id/sfvRgb"
+        android:layout_width="560px"
+        android:layout_height="580px"
         android:layout_alignParentRight="true"
         android:layout_marginTop="40px"
         android:layout_marginRight="35px"
@@ -17,12 +17,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextureView
-        android:id="@+id/sfvRgb"
-        android:layout_width="260px"
-        android:layout_height="280px"
+        android:id="@+id/sfvIR"
+        android:layout_width="560px"
+        android:layout_height="580px"
         android:layout_alignParentRight="true"
         android:layout_marginTop="40px"
         android:layout_marginRight="35px"
@@ -31,20 +30,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:layout_width="260px"
-        android:layout_height="40px"
-        android:layout_alignRight="@id/sfvRgb"
-        android:layout_alignBottom="@id/sfvRgb"
-        android:background="#8F000000"
-        android:gravity="center"
-        android:text="请将人脸对准摄像头"
-        android:textColor="#FFF"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sfvIR" />
+    <!--    <TextView-->
+    <!--        android:layout_width="260px"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_alignRight="@id/sfvRgb"-->
+    <!--        android:layout_alignBottom="@id/sfvRgb"-->
+    <!--        android:background="#8F000000"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="请将人脸对准摄像头"-->
+    <!--        android:textColor="#FFF"-->
+    <!--        android:textSize="18sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/sfvIR" />-->
     <!--    <TextView-->
     <!--        android:id="@+id/tv1"-->
     <!--        android:layout_width="wrap_content"-->

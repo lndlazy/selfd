@@ -1,5 +1,6 @@
 package net.xnzn.app.selfdevice.ui;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -119,5 +120,9 @@ public abstract class SelfCommonActivity extends CountDownBaseActivity {
 
         countDown(SelfConstant.NO_ACTION_TIME, SelfConstant.COUNT_DOWN_TIME);
 
+    }
+
+    public Context getMyAppContext() {
+        return getApplicationContext();
     }
 }

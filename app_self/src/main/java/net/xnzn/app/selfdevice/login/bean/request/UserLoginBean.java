@@ -12,6 +12,14 @@ public class UserLoginBean  {
     public UserLoginBean() {
     }
 
+    public String getMerchantId() {
+        return merchantId;
+    }
+
+    public void setMerchantId(String merchantId) {
+        this.merchantId = merchantId;
+    }
+
     public String getAliUid() {
         return aliUid;
     }
@@ -50,5 +58,17 @@ public class UserLoginBean  {
 
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
+    }
+
+    @Override
+    public String toString() {
+        return "UserLoginBean{" +
+                "serialNum='" + serialNum + '\'' +
+                ", custId='" + custId + '\'' +
+                ", authCode='" + authCode + '\'' +
+                ", merchantId='" + merchantId + '\'' +
+                ", aliUid='" + aliUid + '\'' +
+                ", aliAuthCode='" + aliAuthCode + '\'' +
+                '}';
     }
 }
